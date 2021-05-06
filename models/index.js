@@ -1,13 +1,13 @@
-const Districts = require('./Districts');
-const Students = require('./Students');
+const District = require('./District');
+const Student = require('./Student');
 
-Districts.hasMany(Students, {
+District.hasMany(Student, {
   foreignKey: 'district_id',
   onDelete: 'CASCADE'
 });
 
-Students.belongsTo(Districts, {
+Student.belongsTo(District, {
   foreignKey: 'district_id'
 });
 
-module.exports = { Districts, Students };
+module.exports = { District, Student };
