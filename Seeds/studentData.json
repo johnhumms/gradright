@@ -17,7 +17,7 @@
         "current_year": 11,
         "current_math_credits": 3,
         "required_math_credits": 3,
-        "has_math_credits": false
+        "has_math_credits": true
     },{
         "name": "Hector",
         "student_id": 7773,
