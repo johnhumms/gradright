@@ -1,0 +1,10 @@
+[
+    {
+        "district_name": "Chicago",
+        "math_credit_to_graduate": 4
+    },
+    {
+        "district_name": "Milwaukee",
+        "math_credit_to_graduate": 3
+    }
+]
