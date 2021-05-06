@@ -7,7 +7,7 @@ Districts.hasMany(Students, {
 });
 
 Students.belongsTo(Districts, {
-  foreignKey: 'districts_id'
+  foreignKey: 'district_id'
 });
 
 module.exports = { Districts, Students };
