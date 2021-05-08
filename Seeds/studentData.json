@@ -3,29 +3,29 @@
         "student_name": "Tim",
         "student_id": 1234,
         "school_name": "Chicago High School - West",
-        "district_id": 1,
         "current_year": 9,
         "current_math_credits": 1,
         "required_math_credits": 4,
-        "has_math_credits": false
+        "has_math_credits": false,
+        "district_id": 1
     },
     {
         "student_name": "Amber",
         "student_id": 9089,
         "school_name": "Milwaukee High School of the Arts",
-        "district_id": 2,
         "current_year": 11,
         "current_math_credits": 3,
         "required_math_credits": 3,
-        "has_math_credits": true
+        "has_math_credits": true,
+        "district_id": 2
     },{
         "student_name": "Hector",
         "student_id": 7773,
         "school_name": "Chicago High School - East",
-        "district_id": 1,
         "current_year": 12,
         "current_math_credits": 4,
         "required_math_credits": 4,
-        "has_math_credits": true
+        "has_math_credits": true,
+        "district_id": 1
     }
 ]
