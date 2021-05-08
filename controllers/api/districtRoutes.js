@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { District, Student } = require("../../models");
-// const withAuth = require(../../utils/auth")
+const withAuth = require("../../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
       const districtData = await District.findAll({
           raw: true
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
       const newDistrict = await District.create({
         ...req.body,
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
   });
 
   
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
 try {
     const districtData = await District.destroy({
     where: {
