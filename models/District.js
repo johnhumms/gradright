@@ -16,7 +16,7 @@ District.init(
       allowNull: false,
     },
     math_credit_to_graduate: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
       validate: {
         isNumeric: true,

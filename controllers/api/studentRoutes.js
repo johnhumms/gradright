@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { District, Student } = require("../../models");
-// const withAuth = require(../../utils/auth")
+const withAuth = require("../../utils/auth");
 
 // gets ALL students
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
       const studentData = await Student.findAll({
           raw: true
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 // get an individual student
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Student.findByPk(req.params.id, {
         include: [District]
     })
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // get students by district (HOW TO DIFFERENTIATE THE IDS)
-// router.get('/:district_id', async (req, res) => {
+// router.get('/:district_id', withAuth, async (req, res) => {
 //     Student.findAll(req.params.district_id, {
 //         include: [District]
 //     })
@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
 //     })
 // });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
       const newStudent = await Student.create({
         ...req.body,
@@ -67,8 +67,25 @@ router.post('/', async (req, res) => {
     }
   });
 
-  
-router.delete('/:id', async (req, res) => {
+// update student
+router.put('/:id', withAuth, (req, res) => {
+    Student.update(req.body, {
+        where: {
+          id: req.params.id,
+        }
+      })
+      .then((studentData) => {
+        if (!req.params.id) {
+          res.status(404).json({ message: 'No student found with that id!' });
+          return;
+        }
+        res.json(studentData)
+      })
+      .catch ((err) => res.status(400).json(err))
+  });
+
+// delete student
+router.delete('/:id', withAuth, async (req, res) => {
 try {
     const studentData = await Student.destroy({
     where: {

@@ -1,5 +1,6 @@
 const District = require('./District');
 const Student = require('./Student');
+const User = require('./User');
 
 District.hasMany(Student, {
   foreignKey: 'district_id',
@@ -10,4 +11,4 @@ Student.belongsTo(District, {
   foreignKey: 'district_id'
 });
 
-module.exports = { District, Student };
+module.exports = { District, Student, User };
