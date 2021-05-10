@@ -3,18 +3,13 @@ const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // gets ALL students
-router.get('/', withAuth, async (req, res) => {
-    try {
-      const studentData = await Student.findAll({
-          raw: true
-      });
-
-    res.json(studentData);
-  } catch (err) {
+router.get('/', withAuth, (req, res) => {
+    Student.findAll({})
+    .then((studentData) => res.json(studentData))
+    .catch ((err) => {
       console.log(err);
-    res.status(500).json(err);
-    
-  }
+        res.status(500).json(err);
+    })
 });
 
 // get an individual student
