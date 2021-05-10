@@ -27,24 +27,31 @@ Student.init(
       allowNull: false,
     },
     current_math_credits: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
     required_math_credits: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
     has_math_credits: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
+    },
+    district_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'district',
+        key: 'id'
       }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Student',
+    modelName: 'student',
   }
 );
 
