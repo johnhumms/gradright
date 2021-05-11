@@ -1,0 +1,17 @@
+    {{!-- district drop down --}}
+    <div id="dropdown" class="col-lg-8">
+        <button onclick="districtDropdown()" class="dropbtn">District</button>
+            <div id="districtDropdown" class="dropdown-content">
+                {{#each districts}}
+                    <a href="/api/district/{{id}}">{{district_name}}</a>
+                {{/each}}
+        </div>
+    </div>
+
+    <div id="displayData" class="col-lg-8">
+        
+    </div>
+
+      {{#if logged_in}}
+    <script src="/js/dropdown.js"></script> 
+    {{/if}}

@@ -1,22 +1,16 @@
     
-    
-    {{#if logged_in}}
-    <div id="dropdown" class="col-lg-8">
-        <button onclick="districtDropdown()" class="dropbtn">Dropdown</button>
-            <div id="districtDropdown" class="dropdown-content">
-                {{#each districts}}
-                    <a href="/api/district/{{id}}">{{district_name}}</a>
-                {{/each}}
-        </div>
+
+    {{#if logged_in}}   
+    <h3>Which data would you like to view?</h3>
+
+    <div class="d-flex">
+        <a href="/district"><button>District</button></a>
+        <a href="/student"><button>Student</button></a>
     </div>
 
-    <div id="displayData" class="col-lg-8">
-        
-    </div>
+
     {{else}}
         <h2>Please Login <a href="/login">Here</a></h2>
     {{/if}}
 
-    {{#if logged_in}}
-    <script src="/js/dropdown.js"></script> 
-    {{/if}}
+  
