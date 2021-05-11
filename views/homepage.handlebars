@@ -2,8 +2,6 @@
     <div id="dropdown" class="col-lg-8">
         <button onclick="districtDropdown()" class="dropbtn">Dropdown</button>
             <div id="districtDropdown" class="dropdown-content">
-                {{!-- <a href="#">District A</a>
-                <a href="#">District B</a> --}}
                 {{#each districts}}
                     <a href="/district/{{id}}">{{district_name}}</a>
                 {{/each}}
