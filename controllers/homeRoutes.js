@@ -3,22 +3,52 @@ const { User, District, Student } = require('../models');
 const sequelize = require("../config/connection");
 const withAuth = require('../utils/auth');
 
-
 router.get('/', (req, res) => {
-  District.findAll({
+    User.findAll({})
+      .then((userData) => {
+          // Serialize data so the template can read it
+          const users = userData.map((user) => user.get({ plain: true }));
+
+          // Pass serialized data and session flag into template
+          res.render('homepage', {
+              users, 
+              logged_in: req.session.logged_in 
+          })
+      })
+      .catch ((err) => {res.status(500).json(err)})
+  });
+
+router.get('/student', (req, res) => {
+  Student.findAll({
     })
-    .then((districtData) => {
+    .then((studentData) => {
         // Serialize data so the template can read it
-        const districts = districtData.map((district) => district.get({ plain: true }));
+        const students = studentData.map((student) => student.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('homepage', { 
-            districts, 
+        res.render('student', { 
+            students, 
             logged_in: req.session.logged_in 
         })
     })
     .catch ((err) => {res.status(500).json(err)})
 });
+
+router.get('/district', (req, res) => {
+    District.findAll({
+      })
+      .then((districtData) => {
+          // Serialize data so the template can read it
+          const districts = districtData.map((district) => district.get({ plain: true }));
+  
+          // Pass serialized data and session flag into template
+          res.render('district', { 
+              districts, 
+              logged_in: req.session.logged_in 
+          })
+      })
+      .catch ((err) => {res.status(500).json(err)})
+  });
 
 // router.get('/student/:id', async (req, res) => {
 //   try {

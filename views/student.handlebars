@@ -1,0 +1,11 @@
+{{!-- student dropdown --}}
+    <div id="dropdown" class="col-lg-8">
+        <button onclick="studentDropdown()" class="dropbtn">Student</button>
+            <div id="studentDropdown" class="dropdown-content">
+                {{#each student}}
+                    <a href="/api/student/{{id}}">{{student_name}}</a>
+                {{/each}}
+        </div>
+    </div>
+
+    
