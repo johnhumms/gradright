@@ -30,24 +30,32 @@ router.get('/:id', withAuth, (req, res) => {
     })
 });
 
-// get students by district (HOW TO DIFFERENTIATE THE IDS)
-// router.get('/:district_id', withAuth, async (req, res) => {
-//     Student.findAll(req.params.district_id, {
-//         include: [District]
-//     })
-//     .then((studentData) => {
-//         console.log(req.params);
-//         if (!req.params.id) {
-//             res.status(404).json({ message: 'No student found with that district!' });
-//             return;
-//           }
-//         res.json(studentData)
-//     })
-//     .catch ((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     })
-// });
+
+
+// get students by district DOES NOT WORK
+router.get('/district/:district_id', (req, res) => {
+    Student.findAll({
+        where: {
+            district_id: req.params.district_id
+        },
+        include: [District]
+    })
+    .then((studentData) => {
+        console.log(req.params);
+        if (!req.params.id) {
+            res.status(404).json({ message: 'No student found with that district!' });
+            return;
+          }
+        res.json(studentData)
+    })
+    .catch ((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+});
+
+
+
 
 router.post('/', withAuth, async (req, res) => {
     try {

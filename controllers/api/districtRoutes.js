@@ -2,27 +2,35 @@ const router = require("express").Router();
 const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get('/', withAuth, async (req, res) => {
-    try {
-      const districtData = await District.findAll({
-          raw: true
-        // include: [
-        //   {
-        //     model: District,
-        //     attributes: ['district_name'],
-        //   },
-        // ],
-      });
-
-      //const District = districtData.map((district) => district.get({ plain: true }));
-
-    res.json(districtData);
-  } catch (err) {
+router.get('/', withAuth, (req, res) => {
+    District.findAll({})
+    .then((districtData) => {
+      const district = districtData.map((district) => district.get({ plain: true }));
+      res.json(district);
+    })
+    .catch ((err) => {
       console.log(err);
-    res.status(500).json(err);
-    
-  }
+      res.status(500).json(err);
+    })
 });
+
+// get an individual district
+router.get('/:id', withAuth, (req, res) => {
+  District.findByPk(req.params.id, {})
+  .then((districtData) => {
+      if (!req.params.id) {
+          res.status(404).json({ message: 'No district found with that id!' });
+          return;
+        }
+      res.json(districtData)
+  })
+  .catch ((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+});
+
+
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -43,7 +51,6 @@ try {
     const districtData = await District.destroy({
     where: {
         id: req.params.id,
-        user_id: req.session.user_id,
     },
     });
 

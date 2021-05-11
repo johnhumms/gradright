@@ -5,17 +5,16 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', (req, res) => {
-  Student.findAll({
-      include: [District],
+  District.findAll({
     })
-    .then((studentData) => {
+    .then((districtData) => {
         // Serialize data so the template can read it
-        const students = studentData.map((student) => student.get({ plain: true }));
+        const districts = districtData.map((district) => district.get({ plain: true }));
 
         // Pass serialized data and session flag into template
         res.render('homepage', { 
-        students, 
-        logged_in: req.session.logged_in 
+            districts, 
+            logged_in: req.session.logged_in 
         })
     })
     .catch ((err) => {res.status(500).json(err)})

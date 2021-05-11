@@ -30,10 +30,6 @@ Student.init(
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
-    required_math_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
     has_math_credits: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
