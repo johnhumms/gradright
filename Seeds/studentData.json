@@ -5,7 +5,6 @@
         "school_name": "Chicago High School - West",
         "current_year": 9,
         "current_math_credits": 1,
-        "required_math_credits": 4,
         "has_math_credits": false,
         "district_id": 1
     },
@@ -15,7 +14,6 @@
         "school_name": "Milwaukee High School of the Arts",
         "current_year": 11,
         "current_math_credits": 3,
-        "required_math_credits": 3,
         "has_math_credits": true,
         "district_id": 2
     },{
@@ -24,7 +22,6 @@
         "school_name": "Chicago High School - East",
         "current_year": 12,
         "current_math_credits": 4,
-        "required_math_credits": 4,
         "has_math_credits": true,
         "district_id": 1
     }
