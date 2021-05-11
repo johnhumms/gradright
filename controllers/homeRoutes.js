@@ -18,14 +18,11 @@ router.get('/', (req, res) => {
       .catch ((err) => {res.status(500).json(err)})
   });
 
+// gets all students
 router.get('/student', (req, res) => {
-  Student.findAll({
-    })
+  Student.findAll({include:[District]})
     .then((studentData) => {
-        // Serialize data so the template can read it
         const students = studentData.map((student) => student.get({ plain: true }));
-
-        // Pass serialized data and session flag into template
         res.render('student', { 
             students, 
             logged_in: req.session.logged_in 
@@ -33,6 +30,19 @@ router.get('/student', (req, res) => {
     })
     .catch ((err) => {res.status(500).json(err)})
 });
+
+// gets individual student
+router.get('/student/:id', (req, res) => {
+    Student.findByPk(req.params.id, {include:[District]})
+      .then((studentData) => {
+          const student = studentData.get({ plain: true });
+          res.render('student-profile', { 
+              student, 
+              logged_in: req.session.logged_in 
+          })
+      })
+      .catch ((err) => {res.status(500).json(err)})
+  });
 
 router.get('/district', (req, res) => {
     District.findAll({

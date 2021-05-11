@@ -1,0 +1,19 @@
+<h2>{{student.student_name}}'s' Profile</h2>
+
+{{!-- IF WE HAD A PIC, HIS PIC WOULD GO HERE --}}
+
+<ul>
+    <li>Student ID: {{student.student_id}}</li>
+    <li>School Name: {{student.school_name}}</li>
+    <li>School District: {{student.district.district_name}}</li>
+    <li>Current Year: {{student.current_year}}th Grade</li>
+    <li>Current Math Credit(s): {{student.current_math_credits}}</li>
+    <li>Required Math Credit(s): {{student.district.math_credit_to_graduate}}</li>
+    <li>Ready to Graduate?: 
+        {{#if student.has_math_credits}}
+        Yes!
+        {{else}}
+        No.
+        {{/if}}
+    </li>
+</ul>
