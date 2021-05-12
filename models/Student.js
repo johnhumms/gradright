@@ -35,66 +35,6 @@ Student.init(
         allowNull: false,
     },
 
-    current_english_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-
-    has_english_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-
-    current_science_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-
-    has_science_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-
-    current_socialStudies_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-
-    has_socialStudies_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-
-    current_pe_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-
-    has_pe_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-
-    current_health_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-
-    has_health_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-
-    current_elective_credits: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
-    
-    has_elective_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
-    
     district_id: {
       type: DataTypes.INTEGER,
       references: {
