@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
   });
 
 // gets all students
-router.get('/student', (req, res) => {
+router.get('/student', withAuth, (req, res) => {
   Student.findAll({include:[District]})
     .then((studentData) => {
         const students = studentData.map((student) => student.get({ plain: true }));
@@ -32,7 +32,7 @@ router.get('/student', (req, res) => {
 });
 
 // gets individual student
-router.get('/student/:id', (req, res) => {
+router.get('/student/:id', withAuth, (req, res) => {
     Student.findByPk(req.params.id, {include:[District]})
       .then((studentData) => {
           const student = studentData.get({ plain: true });

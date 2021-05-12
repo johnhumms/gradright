@@ -1,10 +1,9 @@
 {{!-- student options --}}
 <ul>
-                {{#each students}}
-                    <li>
-                        <a href="/student/{{id}}">{{student_name}} </a>
-                        | {{school_name}} | {{current_year}}th Grade | {{district.district_name}}
-                    </li>
-                {{/each}}
+    {{#each students}}
+    <li>
+        <a href="/student/{{id}}">{{student_name}} </a>
+        | {{school_name}} | {{current_year}}th Grade | {{district.district_name}}
+    </li>
+    {{/each}}
 </ul>
-
