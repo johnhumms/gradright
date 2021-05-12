@@ -6,7 +6,7 @@ router.get('/', withAuth, (req, res) => {
     District.findAll({})
     .then((districtData) => {
       const district = districtData.map((district) => district.get({ plain: true }));
-      res.json(district);
+      res.render(district);
     })
     .catch ((err) => {
       console.log(err);
@@ -14,15 +14,20 @@ router.get('/', withAuth, (req, res) => {
     })
 });
 
-// get an individual district
+// get an individual district /api/districy/:id
 router.get('/:id', withAuth, (req, res) => {
   District.findByPk(req.params.id, {})
   .then((districtData) => {
+    const district = districtData.get({ plain: true});
       if (!req.params.id) {
           res.status(404).json({ message: 'No district found with that id!' });
           return;
         }
-      res.json(districtData)
+
+      res.render('district-requirements', {
+        district,
+        logged_in: req.session.logged_in
+      })
   })
   .catch ((err) => {
     console.log(err);

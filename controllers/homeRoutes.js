@@ -48,10 +48,9 @@ router.get('/district', (req, res) => {
     District.findAll({
       })
       .then((districtData) => {
-          // Serialize data so the template can read it
           const districts = districtData.map((district) => district.get({ plain: true }));
   
-          // Pass serialized data and session flag into template
+
           res.render('district', { 
               districts, 
               logged_in: req.session.logged_in 
@@ -59,6 +58,8 @@ router.get('/district', (req, res) => {
       })
       .catch ((err) => {res.status(500).json(err)})
   });
+
+
 
 // router.get('/student/:id', async (req, res) => {
 //   try {
