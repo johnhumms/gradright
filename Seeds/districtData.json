@@ -1,10 +1,34 @@
 [
     {
-        "district_name": "Chicago",
-        "math_credit_to_graduate": 4
+        "district_name": "U46",
+        "math_credit_to_graduate": 3,
+        "english_credit_to_graduate": 4,
+        "science_credit_to_graduate": 2,
+        "socialStudies_credit_to_graduate": 3,
+        "pe_credit_to_graduate": 3.5,
+        "health_credit_to_graduate": 0.5,
+        "elective_credit_to_graduate": 4
+
     },
     {
-        "district_name": "Milwaukee",
-        "math_credit_to_graduate": 3
+        "district_name": "Milwaukee Public School",
+        "math_credit_to_graduate": 3,
+        "english_credit_to_graduate": 4,
+        "science_credit_to_graduate": 3,
+        "socialStudies_credit_to_graduate": 3,
+        "pe_credit_to_graduate": 1.5,
+        "health_credit_to_graduate": 0.5,
+        "elective_credit_to_graduate": 6
+    },
+
+    {
+        "district_name": "District 300",
+        "math_credit_to_graduate": 3,
+        "english_credit_to_graduate": 4,
+        "science_credit_to_graduate": 3,
+        "socialStudies_credit_to_graduate": 3,
+        "pe_credit_to_graduate": 1.5,
+        "health_credit_to_graduate": 0.5,
+        "elective_credit_to_graduate": 6
     }
 ]
