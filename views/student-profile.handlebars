@@ -1,19 +1,32 @@
-<h2>{{student.student_name}}'s' Profile</h2>
+<div>
+    <h2 style="text-align: center;">{{student.student_name}}'s Profile</h2>
 
-{{!-- IF WE HAD A PIC, HIS PIC WOULD GO HERE --}}
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
+        <img src="../assets/profile.png" alt="unknown profile head" style="height:250px; border:solid"/><br>
+<a href="/delete"><button class="btn btn-danger" style="margin-left: 25%">Delete Student</button></a>
 
-<ul>
-    <li>Student ID: {{student.student_id}}</li>
-    <li>School Name: {{student.school_name}}</li>
-    <li>School District: {{student.district.district_name}}</li>
-    <li>Current Year: {{student.current_year}}th Grade</li>
-    <li>Current Math Credit(s): {{student.current_math_credits}}</li>
-    <li>Required Math Credit(s): {{student.district.math_credit_to_graduate}}</li>
-    <li>Ready to Graduate?: 
-        {{#if student.has_math_credits}}
-        Yes!
-        {{else}}
-        No.
-        {{/if}}
-    </li>
-</ul>
+        </div>
+
+        <ul>
+            <li><span style="font-weight:bold">Student ID: </span>{{student.student_id}}</li>
+            <li><span style="font-weight:bold">School Name: </span>{{student.school_name}}</li>
+            <li><span style="font-weight:bold">School District: </span>{{student.district.district_name}}</li>
+            <li><span style="font-weight:bold">Current Year: </span>{{student.current_year}}th Grade</li>
+            <li><span style="font-weight:bold">Current Math Credit(s): </span>{{student.current_math_credits}}</li>
+            <li><span style="font-weight:bold">Required Math Credit(s):
+                </span>{{student.district.math_credit_to_graduate}}</li>
+            <li><span style="font-weight:bold">Ready to Graduate?: </span>
+                {{#if student.has_math_credits}}
+                <span style="color: green">Yes!</span>
+                {{else}}
+                <span style="color: red">No.</span>
+                {{/if}}
+            </li>
+            <br>
+            <a href="/edit"><button class="btn btn-info">Edit Student</button></a>
+        </ul>
+    </div>
+</div>
+
+<a href="/student" class=" d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to Students</button></a>
