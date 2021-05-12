@@ -3,7 +3,7 @@ async function deleteStudent(event) {
     event.preventDefault();
 
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-console.log(id)
+
     if (window.confirm("Are you sure you want to delete this student?")) {
         const response = await fetch(`/api/student/${id}`, {
             method: 'DELETE',
@@ -26,4 +26,4 @@ console.log(id)
 
 document
     .querySelector('#delete-stu')
-    .addEventListener('button', deleteStudent);
+    .addEventListener('click', deleteStudent);

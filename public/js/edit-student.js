@@ -24,4 +24,4 @@ console.log("edit")
   }
 
 
-document.querySelector('#stu-data').addEventListener('submit', editStudent);
+document.querySelector('#stu-data').addEventListener('click', editStudent);
