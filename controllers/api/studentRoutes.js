@@ -32,7 +32,8 @@ router.get('/:id', withAuth, (req, res) => {
 
 
 
-// get students by district DOES NOT WORK
+// get students by district 
+// DOES NOT WORK
 router.get('/district/:district_id', (req, res) => {
     Student.findAll({
         where: {
@@ -101,7 +102,7 @@ try {
     res.status(404).json({ message: 'No Student found with this id!' });
     return;
     }
-
+    console.log("DELETE API STUDENT")
     res.status(200).json(studentData);
 } catch (err) {
     res.status(500).json(err);

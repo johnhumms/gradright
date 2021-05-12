@@ -16,13 +16,23 @@
         "current_math_credits": 3,
         "has_math_credits": true,
         "district_id": 2
-    },{
+    }
+    ,{
         "student_name": "Hector",
         "student_id": 7773,
         "school_name": "Chicago High School - East",
         "current_year": 12,
         "current_math_credits": 4,
         "has_math_credits": true,
+        "district_id": 1
+    }
+    ,{
+        "student_name": "Joyce",
+        "student_id": 9876,
+        "school_name": "Chicago High School - East",
+        "current_year": 10,
+        "current_math_credits": 1.5,
+        "has_math_credits": false,
         "district_id": 1
     }
 ]
