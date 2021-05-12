@@ -11,10 +11,12 @@ District.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    
     district_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     math_credit_to_graduate: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
@@ -22,6 +24,55 @@ District.init(
         isNumeric: true,
       },
     },
+
+    english_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
+    science_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
+    socialStudies_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
+    pe_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
+    health_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
+    elective_credit_to_graduate: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
+
   },
   {
     sequelize,
