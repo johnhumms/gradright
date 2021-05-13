@@ -1,7 +1,7 @@
-
+// does not WORK YET, BUT THE PAGE CONNECTS
 async function editStudent(event) {
     event.preventDefault();
-console.log("edit")
+console.log("edit") // THIS WORKS
 
     const name = document.querySelector('#stu-name').value;
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
