@@ -2,34 +2,6 @@ const router = require("express").Router();
 const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// gets ALL students
-router.get('/', withAuth, (req, res) => {
-    Student.findAll({})
-    .then((studentData) => res.json(studentData))
-    .catch ((err) => {
-      console.log(err);
-        res.status(500).json(err);
-    })
-});
-
-// get an individual student
-router.get('/:id', withAuth, (req, res) => {
-    Student.findByPk(req.params.id, {
-        include: [District]
-    })
-    .then((studentData) => {
-        if (!req.params.id) {
-            res.status(404).json({ message: 'No student found with that id!' });
-            return;
-          }
-        res.json(studentData)
-    })
-    .catch ((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    })
-});
-
 
 
 // get students by district 
