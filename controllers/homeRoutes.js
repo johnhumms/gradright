@@ -31,6 +31,19 @@ router.get('/student', withAuth, (req, res) => {
     .catch ((err) => {res.status(500).json(err)})
 });
 
+// gets all students
+router.get('/student', withAuth, (req, res) => {
+  Student.findAll({include:[District]})
+    .then((studentData) => {
+        const students = studentData.map((student) => student.get({ plain: true }));
+        res.render('student', { 
+            students, 
+            logged_in: req.session.logged_in 
+        })
+    })
+    .catch ((err) => {res.status(500).json(err)})
+});
+
 // gets individual student
 router.get('/student/:id', withAuth, (req, res) => {
     Student.findByPk(req.params.id, {include:[District]})
@@ -44,13 +57,14 @@ router.get('/student/:id', withAuth, (req, res) => {
       .catch ((err) => {res.status(500).json(err)})
   });
 
+
+// to display in drop down to show all districts
 router.get('/district', (req, res) => {
     District.findAll({
       })
       .then((districtData) => {
           const districts = districtData.map((district) => district.get({ plain: true }));
   
-
           res.render('district', { 
               districts, 
               logged_in: req.session.logged_in 
@@ -58,6 +72,24 @@ router.get('/district', (req, res) => {
       })
       .catch ((err) => {res.status(500).json(err)})
   });
+
+
+// to display for drop down to add student
+  router.get('/add-student', (req, res) => {
+    District.findAll({
+      })
+      .then((districtData) => {
+          const districts = districtData.map((district) => district.get({ plain: true }));
+
+          res.render('add-student', { 
+              districts: districts, 
+              logged_in: req.session.logged_in 
+          })
+      })
+      .catch ((err) => {res.status(500).json(err)})
+  });
+
+
 
 
 
