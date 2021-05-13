@@ -2,8 +2,6 @@ const router = require("express").Router();
 const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-
-
 // get students by district 
 // DOES NOT WORK
 router.get('/district/:district_id', (req, res) => {
@@ -27,9 +25,7 @@ router.get('/district/:district_id', (req, res) => {
     })
 });
 
-
-
-
+// creates new student
 router.post('/', withAuth, async (req, res) => {
     try {
       const newStudent = await Student.create({
