@@ -12,19 +12,18 @@
         <input class="form-input" type="text" id="stu-id" />
       </div>
 
-{{!-- NOT SHOWING UP --}}
       <div class="form-group">
         <label for="district">District:</label>
             <select id="district">
                 {{#each districts}}
-                    <option value="{{district_name}}">{{district_name}}</option>
+                    <option value="{{id}}">{{district_name}}</option>
                 {{/each}}
         </select>
       </div>
 
       <div class="form-group">
-        <label for="name">School Name:</label>
-        <input class="form-input" type="text" id="name" />
+        <label for="school">School Name:</label>
+        <input class="form-input" type="text" id="school" />
       </div>
 
       <div class="form-group">
@@ -44,9 +43,9 @@
 
       <div class="form-group">
         <label for="math-cred">Has All Required Math Credit(s):</label>
-        <select id="year">
-                    <option value='0'>No</option>
-                    <option value='1'>Yes</option>
+        <select id="math-cred">
+                    <option value='false'>No</option>
+                    <option value='true'>Yes</option>
         </select>
       </div>
 
