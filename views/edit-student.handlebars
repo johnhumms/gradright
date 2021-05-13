@@ -1,1 +1,61 @@
-<h1>Edit Student</h1>
+<div class="col-md-6">
+    <h2>Edit {{student.student_name}}'s Profile</h2>
+
+    <form class="form" id="stu-data">
+        <div class="form-group">
+            <label for="stu-name">Name:</label>
+            <input class="form-input" type="text" id="stu-name" value="{{student.student_name}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="stu-id">Student ID#:</label>
+            <input class="form-input" type="text" id="stu-id" value="{{student.student_id}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="district">District:</label>
+            <select id="district" value="{{student.district.district_name}}">
+                {{#each districts}}
+                    <option value="{{id}}">{{district_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="school">School Name:</label>
+            <input class="form-input" type="text" id="school" value="{{student.school_name}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="year">Current Year:</label>
+            <select id="year" value="{{student.current_year}}">
+                <option value='9'>9th</option>
+                <option value='10'>10th</option>
+                <option value='11'>11th</option>
+                <option value='12'>12th</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="math">Current Math Credit(s):</label>
+            <input class="form-input" type="text" id="math" value="{{student.current_math_credits}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="math-cred">Has All Required Math Credit(s):</label>
+            <select id="math-cred" value="{{student.has_math_credits}}">
+                <option value='false'>No</option>
+                <option value='true'>Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" id="edit-btn">Edit Student</button>
+        </div>
+
+    </form>
+    <a href="/student/{{student.id}}"><button class="btn btn-secondary">Back to
+            {{student.student_name}}'s Profile</button></a>
+</div>
+
+<script src="/js/edit-student.js"></script>
