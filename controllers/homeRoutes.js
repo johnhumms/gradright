@@ -111,6 +111,20 @@ router.get('/edit-district/:id', withAuth, (req, res) => {
     .catch((err) => { res.status(500).json(err) })
 });
 
+// to render the add-student page
+// LIKE WITH THE HOMEPAGE, I DON'T NEED THIS INFO, SO IS THERE A WAY FOR ME TO RENDER THE PAGE WITHOUT DOING A ROUTE?
+router.get('/add-district', (req, res) => {
+  District.findAll({})
+    .then((districtData) => {
+      const districts = districtData.map((district) => district.get({ plain: true }));
+
+      res.render('add-district', {
+        districts: districts,
+        logged_in: req.session.logged_in
+      })
+    })
+    .catch((err) => { res.status(500).json(err) })
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

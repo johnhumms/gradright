@@ -36,7 +36,7 @@ router.get('/:id', withAuth, (req, res) => {
 });
 
 
-
+// add new district
 router.post('/', withAuth, async (req, res) => {
     try {
       const newDistrict = await District.create({
@@ -51,6 +51,23 @@ router.post('/', withAuth, async (req, res) => {
   });
 
   
+// update district
+router.put('/:id', withAuth, (req, res) => {
+  District.update(req.body, {
+      where: {
+        id: req.params.id,
+      }
+    })
+    .then((districtData) => {
+      if (!req.params.id) {
+        res.status(404).json({ message: 'No district found with that id!' });
+        return;
+      }
+      res.json(districtData)
+    })
+    .catch ((err) => res.status(400).json(err))
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
 try {
     const districtData = await District.destroy({
