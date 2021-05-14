@@ -1,4 +1,4 @@
-// does not WORK YET, BUT THE PAGE CONNECTS
+
 async function editStudent(event) {
     event.preventDefault();
 

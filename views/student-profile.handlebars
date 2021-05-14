@@ -21,10 +21,21 @@
                 {{else}}
                 <span style="color: red">No.</span>
                 {{/if}}
+
+{{!-- could try this instead; IF WORKS, DELETE BOOLEAN FROM STUDENT--}}
+{{!-- DOES NOT WORK WHEN THE FIRST NUMBER IS LESS THAN THE REQUIRED CREDITS --}}
+{{!-- HOW TO TURN INTO IF STATEMENT? --}}
+                {{!-- {{#ge student.current_math_credits student.district.math_credit_to_graduate}}
+                <span style="color: green">Yes!</span>
+                {{else}}
+                <span style="color: red">No.</span>
+                {{/ge}} --}}
+
+
             </li>
             <br>
             <a href="/edit-student/{{student.id}}">
-                <button class="btn btn-info" id="edit-stu">Edit Student</button>
+                <button class="btn btn-info">Edit Student</button>
             </a>
 
         </ul>
