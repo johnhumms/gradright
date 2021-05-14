@@ -1,5 +1,6 @@
 
 async function deleteStudent(event) {
+   
     event.preventDefault();
 
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
@@ -12,7 +13,7 @@ async function deleteStudent(event) {
         });
 
         if (response.ok) {
-            alert("Deleted student.")
+            alert("Deleted student.");
             document.location.replace('/student');
         } else {
             alert(response.statusText);
@@ -21,9 +22,12 @@ async function deleteStudent(event) {
     else {
         document.location.reload();
     }
-};
 
+};
 
 document
     .querySelector('#delete-stu')
     .addEventListener('click', deleteStudent);
+
+
+
