@@ -1,4 +1,4 @@
-// does not WORK YET, BUT THE PAGE CONNECTS
+
 async function editDistrict(event) {
     event.preventDefault();
 
@@ -19,7 +19,7 @@ async function editDistrict(event) {
       });
       
       if (response.ok) {
-        document.location.replace(`/district/${id}`);
+        document.location.replace(`/api/district/${id}`);
       } else {
         alert(response.statusText);
       }
