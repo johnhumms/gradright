@@ -73,6 +73,33 @@ try {
 } catch (err) {
     res.status(500).json(err);
 }
+const nodemailer = require("nodemailer");
+async function main() {
+let transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+      user: 'gradrightadmn@gmail.com',
+      pass: 'gradright1!',
+  },
+  });
+
+  // send mail with defined transport object
+let info = await transporter.sendMail({
+  from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
+  to: "gradrightadmn@gmail.com, kwjun90@gmail.com", // list of receivers
+  subject: "GradRight - STUDENT DELETED", // Subject line
+  text: "STUDENT DELETE", // plain text body
+  html: "<b>A Student was Deleted from the database</b>", // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+}
+
+main().catch(console.error);
+
 });
 
   module.exports = router;
