@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     
     <title>GradRight</title>
 </head>
@@ -15,24 +15,24 @@
         <ul class="nav justify-content-end">
             <li><a class="nav-link active" style="color:white" href="/">Home</a></li>
             <li class="nav-item">
-                {{#if loggedIn}}
+                {{#if logged_in}}
                     <a class="nav-link" href="/logout" style="color:white" id="logout">Log Out</a>
                 {{else}}
                     <a class="nav-link"  style="color:white" href="/login">Login</a>
                 {{/if}}
             </li>
             <li class="nav-item">
-                <a class="nav-link color: teal">Admin | GradRight</a>
+                <a class="nav-link" style="color: rgb(131, 221, 221)">Admin | GradRight</a>
             </li>
         </ul>
     </nav>
         <!--jumbotron-->
         <div class="jumbotron">
-            <h1 class="display-4">GradRight</h1>
+            
             
             {{{body}}}
 
-            {{#if loggedIn}}
+            {{#if logged_in}}
                 <script src="/js/logout.js"></script>
             {{/if}}
         </div>
