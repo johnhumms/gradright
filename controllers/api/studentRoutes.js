@@ -32,13 +32,17 @@ router.post('/', withAuth, async (req, res) => {
       const newStudent = await Student.create({
         ...req.body,
       });
-  
+      main(newStudent).catch(console.error);
       res.status(200).json(newStudent);
+
+      console.log('student who was updated!!', newStudent)
+
+      res.json(studentData)
     } catch (err) {
       res.status(400).json(err);
     }
 
-  async function main() {
+  async function main(newStudent) {
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -55,7 +59,7 @@ router.post('/', withAuth, async (req, res) => {
       to: "gradrightadmn@gmail.com", // list of receivers
       subject: "GradRight - NEW STUDENT CREATED", // Subject line
       text: "NEW STUDENT CREATED", // plain text body
-      html: "<b>A NEW Student was CREATED and ADDED the database</b>", // html body
+      html: `<b>A ${newStudent.student_name} was CREATED from the database</b>`, // html body
       });
     
       console.log("Message sent: %s", info.messageId);
@@ -124,6 +128,14 @@ router.put('/:id', withAuth, (req, res) => {
 // delete student
 router.delete('/:id', withAuth, async (req, res) => {
 try {
+  Student.findAll({
+    where:{ id: req.params.id},
+    raw: true
+  }).then(async function(student) {
+
+    console.log('student who was updated!!', student)
+    main(student).catch(console.error);
+  
     const studentData = await Student.destroy({
     where: {
         id: req.params.id,
@@ -136,12 +148,13 @@ try {
     }
     console.log("DELETE API STUDENT")
     res.status(200).json(studentData);
+  })
 } catch (err) {
     res.status(500).json(err);
 }
 
 // nodemailer to send email to admin when student is deleted 
-async function main() {
+async function main(student) {
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
@@ -158,7 +171,7 @@ let info = await transporter.sendMail({
   to: "gradrightadmn@gmail.com", // list of receivers
   subject: "GradRight - STUDENT DELETED", // Subject line
   text: "STUDENT DELETE", // plain text body
-  html: "<b>A Student was Deleted from the database</b>", // html body
+  html: `<b>A ${student[0].student_name} was DELETED from the database</b>`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);
