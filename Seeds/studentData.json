@@ -1,38 +1,38 @@
 [
     {
-        "student_name": "Tim",
+        "student_name": "SpongeBob SquarePants",
         "student_id": 1234,
         "school_name": "Elgin High School",
         "current_year": 9,
         "current_math_credits": 1,
-        "has_math_credits": false,
+        "picture": "spongebob.jpeg",
         "district_id": 1
     },
     {
-        "student_name": "Amber",
+        "student_name": "Sandy",
         "student_id": 9089,
         "school_name": "Milwaukee High School of the Arts",
         "current_year": 11,
         "current_math_credits": 3,
-        "has_math_credits": true,
+        "picture": "sandy.jpeg",
         "district_id": 2
     }
     ,{
-        "student_name": "Hector",
+        "student_name": "Patrick",
         "student_id": 7773,
         "school_name": "Larkin High School",
         "current_year": 12,
         "current_math_credits": 3,
-        "has_math_credits": true,
+        "picture": "patrick.jpeg",
         "district_id": 1
     }
     ,{
-        "student_name": "Joyce",
+        "student_name": "Squidward",
         "student_id": 9876,
         "school_name": "Dundee Crowne High School",
-        "current_year": 10,
-        "current_math_credits": 1.5,
-        "has_math_credits": false,
+        "current_year": 12,
+        "current_math_credits": 5,
+        "picture": "squidward.jpeg",
         "district_id": 3
     }
 ]

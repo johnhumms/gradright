@@ -30,11 +30,11 @@ Student.init(
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
-    has_math_credits: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'profile.png',
     },
-
     district_id: {
       type: DataTypes.INTEGER,
       references: {

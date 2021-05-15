@@ -3,7 +3,7 @@
 
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-column">
-            <img src="../assets/profile.png" alt="unknown profile head" style="height:250px; border:solid" /><br>
+            <img src="../assets/{{student.picture}}" alt="{{student.student_name}}'s profile head" style="height:250px; width:230px; border:solid" /><br>
             <button class="btn btn-danger" style="margin-left: 20%; margin-right:20%" id="delete-stu">Delete Student</button>
         </div>
 
@@ -16,22 +16,7 @@
             <li><span style="font-weight:bold">Required Math Credit(s):
                 </span>{{student.district.math_credit_to_graduate}}</li>
             <li><span style="font-weight:bold">Ready to Graduate?: </span>
-                {{#if student.has_math_credits}}
-                <span style="color: green">Yes!</span>
-                {{else}}
-                <span style="color: red">No.</span>
-                {{/if}}
-
-{{!-- could try this instead; IF WORKS, DELETE BOOLEAN FROM STUDENT--}}
-{{!-- DOES NOT WORK WHEN THE FIRST NUMBER IS LESS THAN THE REQUIRED CREDITS --}}
-{{!-- HOW TO TURN INTO IF STATEMENT? --}}
-                {{!-- {{#ge student.current_math_credits student.district.math_credit_to_graduate}}
-                <span style="color: green">Yes!</span>
-                {{else}}
-                <span style="color: red">No.</span>
-                {{/ge}} --}}
-
-
+                {{#ge student.current_math_credits student.district.math_credit_to_graduate}}{{/ge}}
             </li>
             <br>
             <a href="/edit-student/{{student.id}}">

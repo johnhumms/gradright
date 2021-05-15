@@ -5,6 +5,14 @@ module.exports = {
 
     // greater than or equal to
     ge: (a,b) => {
-	    return (a >= b);
+      a = parseInt(a);
+      b = parseInt(b);
+      
+      if (a >= b) {
+        return ('<span style="color: green">Yes!</span>');
+      }
+      else {
+        return ('<span style="color: red">No.</span>');
+      }
     },
   };
