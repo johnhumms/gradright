@@ -1,11 +1,11 @@
     {{!-- district drop down --}}
-    <div id="dropdown" class="col-lg-8">
-        <button onclick="districtDropdown()" class="dropbtn">District</button>
-            <div id="districtDropdown" class="dropdown-content">
+    <div class="dropdown">
+          {{!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Districts</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
                 {{#each districts}}
-                    <a href="/api/district/{{id}}">{{district_name}}</a>
+                    <a class="dropdown-item" href="/api/district/{{id}}">{{district_name}}</a>
                 {{/each}}
-        </div>
+            {{!-- </div> --}}
     </div>
 
 
@@ -13,6 +13,6 @@
         {{!-- IF TIME, SHOW DATA HERE INSTEAD --}}
     </div>
 
-    <a href="/add-district"><button class="btn btn-info">Add District</button></a>
+    <a href="/add-district"><button class="btn btn-info" style="margin-top:15px";>Add District</button></a>
 
-<script src="/js/dropdown.js"></script>
+<script src="../public/js/dropdown.js"></script>

@@ -5,7 +5,7 @@ async function editDistrict(event) {
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
     const district_name = document.querySelector('#district-name').value;
-    const math_credit_to_graduate = document.querySelector('#math').value;
+    const math_credit_to_graduate = parseInt(document.querySelector('#math').value);
 
       const response = await fetch(`/api/district/${id}`, {
         method: 'PUT',
