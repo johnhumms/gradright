@@ -67,47 +67,59 @@ router.post('/', withAuth, async (req, res) => {
 
 // update student
 router.put('/:id', withAuth, (req, res) => {
-    Student.update(req.body, {
-        where: {
-          id: req.params.id,
-        }
-      })
-      .then((studentData) => {
-        if (!req.params.id) {
-          res.status(404).json({ message: 'No student found with that id!' });
-          return;
-        }
-        res.json(studentData)
-      })
-      .catch ((err) => res.status(400).json(err))
-
-  // nodemailer sends email to admin when student is updated
-    async function main() {
-      let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-            user: 'gradrightadmn@gmail.com',
-            pass: 'gradright1!',
-        },
-        });
-      
-        // send mail with defined transport object
-      let info = await transporter.sendMail({
-        from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
-        to: "gradrightadmn@gmail.com", // list of receivers
-        subject: "GradRight - STUDENT UPDATED", // Subject line
-        text: "STUDENT UPDATE", // plain text body
-        html: "<b>A Student was UPDATED from the database</b>", // html body
-        });
-      
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  Student.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((studentData) => {
+      if (!req.params.id) {
+        res.status(404).json({ message: 'No student found with that id!' });
+        return;
       }
-      
-      main().catch(console.error);
-  });
+      Student.findAll({
+        where:{ id: req.params.id},
+        raw: true
+      }).then(function(student) {
+
+        console.log('student who was updated!!', student)
+        main(student).catch(console.error);
+      })
+
+
+
+      res.json(studentData)
+    })
+    .catch ((err) => res.status(400).json(err))
+
+// nodemailer sends email to admin when student is updated
+  async function main(student) {
+    console.log('student in the mainnnnnn', student)
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+          user: 'gradrightadmn@gmail.com',
+          pass: 'gradright1!',
+      },
+      });
+    
+      // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
+      to: "gradrightadmn@gmail.com", // list of receivers
+      subject: "GradRight - STUDENT UPDATED", // Subject line
+      text: "STUDENT UPDATE", // plain text body
+      html: `<b>A ${student[0].student_name} was UPDATED from the database</b>`, // html body
+      });
+    
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    }
+    
+
+});
 
 // delete student
 router.delete('/:id', withAuth, async (req, res) => {
