@@ -55,8 +55,26 @@ router.get('/district', (req, res) => {
 
       res.render('district', {
         districts,
+        show_district: false,
         logged_in: req.session.logged_in
       })
+    })
+    .catch((err) => { res.status(500).json(err) })
+});
+
+// gets individual district
+router.get('/district/:id', withAuth, (req, res) => {
+  console.log('WE hit hte district id route!!!!!!')
+  District.findByPk(req.params.id)
+    .then((districtData) => {
+      const district = districtData.get({ plain: true });
+
+          res.render('district', {
+            district,
+            show_district: true,
+            logged_in: req.session.logged_in
+          })
+
     })
     .catch((err) => { res.status(500).json(err) })
 });
