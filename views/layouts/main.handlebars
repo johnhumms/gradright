@@ -7,28 +7,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
     
-    <title>GradRight!</title>
+    <title>GradRight</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white justify-content-end">
-        <ul class="nav justify-content-end">
+<<<<<<< HEAD
+    <div class="container-fluid">
+        <ul class="nav justify-content-end tex-warning">
             <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-            </li> 
+                <a class="nav-link active" aria-current="page"  href="/"><strong>Home</strong></a>
+            </li>
             <li class="nav-item">
-                {{#if loggedIn}}
-                    <a class="nav-link" href="/logout" id="logout">Log Out</a>
+                {{#if logged_in}}
+                    <a class="nav-link" href="/logout" id="logout"><strong>Log Out</strong></a>
                 {{else}}
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/login"><strong>Login</strong></a>
                 {{/if}}
             </li>
-            <li class="nav-item">
-                <a class="nav-link color: teal">Admin | GradRight</a>
+            <li class="nav-item"></li>
+                <p style="margin-top: 8px; margin-left: 5px;"> <strong>Admin | GradRight</strong></p>
+            </li>
             </li>
         </ul>
-    </nav>
-    <h1>GradRight</h1>
+    
+=======
+ 
+>>>>>>> 2ba852cf815a7a689d250b0084054d7255a2c532
     </div>
     {{{body}}}
 
