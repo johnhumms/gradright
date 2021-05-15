@@ -43,21 +43,3 @@
   
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-
-/* nav bar headings*/
-ul.nav li a, ul.nav li a {
-  color: black;
-}
-
-ul.nav li a:hover, ul.nav li a:active {
-    color: teal;
-}
-
-.nav {
-  color: black;
-  text-align: right;
-}
-
-.container-fluid {
-  background-color: grey;
-}
