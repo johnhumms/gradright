@@ -13,12 +13,12 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white justify-content-end">
         <ul class="nav justify-content-end">
+            <li><a class="nav-link active" style="color:white" href="/">Home</a></li>
             <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
                 {{#if loggedIn}}
-                    <a class="nav-link" href="/logout" id="logout">Log Out</a>
+                    <a class="nav-link" href="/logout" style="color:white" id="logout">Log Out</a>
                 {{else}}
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link"  style="color:white" href="/login">Login</a>
                 {{/if}}
             </li>
             <li class="nav-item">
@@ -33,7 +33,7 @@
             {{{body}}}
 
             {{#if loggedIn}}
-                <script src="../../public/js/logout.js"></script>
+                <script src="/js/logout.js"></script>
             {{/if}}
         </div>
     

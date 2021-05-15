@@ -7,6 +7,7 @@ async function addStudent(event) {
     const current_year = parseInt(document.querySelector('#year').value);
     const current_math_credits = parseInt(document.querySelector('#math').value);
     // const picture = document.querySelector('#profile').value;
+    const picture = 'profile.png';
     const district_id = parseInt(document.querySelector('#district').value);
 
 
