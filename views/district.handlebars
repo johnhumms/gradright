@@ -4,11 +4,11 @@
         <div class="form-group district-form">
             <label for="district">District:</label>
             <select id="district">
+                <option>Districts</option>
                 {{#each districts}}
                 <option value="{{id}}">{{district_name}}</option>
                 {{/each}}
             </select>
-            <button id="dis-btn">Search for District</button>
         </div>
 </div>
 
@@ -18,7 +18,7 @@
 {{#if show_district}}
 <div id="displayData" class="col-lg-8" style="margin:20px; border:solid; border-radius:10px; background-color:white;">
     {{!-- IF TIME, SHOW DATA HERE INSTEAD --}}
-    {{> district-requirements2}}
+    {{> district-requirements}}
 </div>
 {{/if}}
 
