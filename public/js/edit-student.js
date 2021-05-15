@@ -20,7 +20,7 @@ async function editStudent(event) {
             school_name,
             current_year,
             current_math_credits,
-            picture,
+            // picture,
             district_id,
         }),
         headers: {
