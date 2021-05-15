@@ -1,8 +1,8 @@
 async function displayDistrict(event) {
     event.preventDefault();
-console.log("DISTRICTTTTT")
+
     const id = document.querySelector('#district').value;
-    console.log(id)
+
     if (id) {
         // Send a POST request to the API endpoint
         const response = await fetch('/district/'+id, {
@@ -19,4 +19,4 @@ console.log("DISTRICTTTTT")
       }
 }
 
- document.querySelector('#dis-btn').addEventListener('click', displayDistrict);
+ document.querySelector('#district').addEventListener('change', displayDistrict);
