@@ -41,12 +41,10 @@
       <input class="form-input" type="text" id="math" />
     </div>
 
-    <div class="form-group">
-      <label for="math-cred">Has All Required Math Credit(s):</label>
-      <select id="math-cred">
-        <option value='false'>No</option>
-        <option value='true'>Yes</option>
-      </select>
+       {{!-- IMG DOES NOT SAVE TO BE UPLOADED --}}
+    <p>Click on the "Choose File" button to upload an image for the student:</p>
+    <div action="/action_page.php">
+      <input type="file" id="profile" name="img" src="#">
     </div>
 
     <div class="form-group">

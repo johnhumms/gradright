@@ -2,8 +2,8 @@ async function addDistrict(event) {
     event.preventDefault();
 
     const district_name = document.querySelector('#district-name').value;
-    const math_credit_to_graduate = document.querySelector('#math').value;
-console.log(district_name)
+    const math_credit_to_graduate = dparseInt(ocument.querySelector('#math').value);
+
     const response = await fetch(`/api/district`, {
       method: 'POST',
       body: JSON.stringify({
