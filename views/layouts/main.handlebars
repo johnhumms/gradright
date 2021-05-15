@@ -28,12 +28,19 @@
             </li>
         </ul>
     </nav>
-    <h1>GradRight</h1>
-    </div>
-    {{{body}}}
+    {{!-- <div class="jumbotron jumbotron-fluid" style="padding:50px"> --}}
+        <div class="container">
+        <h1 class="display-4">GradRight</h1>
+        <p class="lead">
 
-    {{#if loggedIn}}
-        <script src="/js/logout.js"></script>
-    {{/if}}
+            {{{body}}}
+
+            {{#if loggedIn}}
+            <script src="/js/logout.js"></script>
+            {{/if}}
+        </p>
+    {{!-- </div> --}}
+</div>
+  
 </body>
 </html>
