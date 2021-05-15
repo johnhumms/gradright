@@ -1,20 +1,18 @@
-
-async function deleteStudent(event) {
-   
+async function deleteDistrict(event) {
     event.preventDefault();
 
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-    if (window.confirm("Are you sure you want to delete this student?")) {
-        const response = await fetch(`/api/student/${id}`, {
+    if (window.confirm("Are you sure you want to delete this district?")) {
+        const response = await fetch(`/api/district/${id}`, {
             method: 'DELETE',
             body: JSON.stringify({ id }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            alert("Deleted student.");
-            document.location.replace('/student');
+            alert("Deleted district.")
+            document.location.replace('/district');
         } else {
             alert(response.statusText);
         }
@@ -22,12 +20,9 @@ async function deleteStudent(event) {
     else {
         document.location.reload();
     }
-
 };
 
+
 document
-    .querySelector('#delete-stu')
-    .addEventListener('click', deleteStudent);
-
-
-
+    .querySelector('#delete-district')
+    .addEventListener('click', deleteDistrict);

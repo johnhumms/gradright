@@ -1,0 +1,60 @@
+<div class="col-md-6">
+  <h2>Add A Student</h2>
+
+  <form class="form student-form">
+    <div class="form-group">
+      <label for="stu-name">Name:</label>
+      <input class="form-input" type="text" id="stu-name" />
+    </div>
+
+    <div class="form-group">
+      <label for="stu-id">Student ID#:</label>
+      <input class="form-input" type="text" id="stu-id" />
+    </div>
+
+    <div class="form-group">
+      <label for="district">District:</label>
+      <select id="district">
+        {{#each districts}}
+          <option value="{{id}}">{{district_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="school">School Name:</label>
+      <input class="form-input" type="text" id="school" />
+    </div>
+
+    <div class="form-group">
+      <label for="year">Current Year:</label>
+      <select id="year">
+        <option value='9'>9th</option>
+        <option value='10'>10th</option>
+        <option value='11'>11th</option>
+        <option value='12'>12th</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Math Credit(s):</label>
+      <input class="form-input" type="text" id="math" />
+    </div>
+
+    <div class="form-group">
+      <label for="math-cred">Has All Required Math Credit(s):</label>
+      <select id="math-cred">
+        <option value='false'>No</option>
+        <option value='true'>Yes</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Add Student</button>
+    </div>
+
+  </form>
+  <a href="/student"><button class="btn btn-secondary">Back to Students</button></a>
+</div>
+
+<script src="/js/add-student.js"></script>

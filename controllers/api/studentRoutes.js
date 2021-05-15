@@ -2,36 +2,6 @@ const router = require("express").Router();
 const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// gets ALL students
-router.get('/', withAuth, (req, res) => {
-    Student.findAll({})
-    .then((studentData) => res.json(studentData))
-    .catch ((err) => {
-      console.log(err);
-        res.status(500).json(err);
-    })
-});
-
-// get an individual student
-router.get('/:id', withAuth, (req, res) => {
-    Student.findByPk(req.params.id, {
-        include: [District]
-    })
-    .then((studentData) => {
-        if (!req.params.id) {
-            res.status(404).json({ message: 'No student found with that id!' });
-            return;
-          }
-        res.json(studentData)
-    })
-    .catch ((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    })
-});
-
-
-
 // get students by district 
 // DOES NOT WORK
 router.get('/district/:district_id', (req, res) => {
@@ -55,14 +25,11 @@ router.get('/district/:district_id', (req, res) => {
     })
 });
 
-
-
-
+// creates new student
 router.post('/', withAuth, async (req, res) => {
     try {
       const newStudent = await Student.create({
         ...req.body,
-        // user_id: req.session.user_id,
       });
   
       res.status(200).json(newStudent);
@@ -94,7 +61,6 @@ try {
     const studentData = await Student.destroy({
     where: {
         id: req.params.id,
-        // user_id: req.session.user_id,
     },
     });
 
@@ -107,6 +73,33 @@ try {
 } catch (err) {
     res.status(500).json(err);
 }
+const nodemailer = require("nodemailer");
+async function main() {
+let transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+      user: 'gradrightadmn@gmail.com',
+      pass: 'gradright1!',
+  },
+  });
+
+  // send mail with defined transport object
+let info = await transporter.sendMail({
+  from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
+  to: "gradrightadmn@gmail.com, kwjun90@gmail.com", // list of receivers
+  subject: "GradRight - STUDENT DELETED", // Subject line
+  text: "STUDENT DELETE", // plain text body
+  html: "<b>A Student was Deleted from the database</b>", // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+}
+
+main().catch(console.error);
+
 });
 
   module.exports = router;

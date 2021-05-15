@@ -1,0 +1,27 @@
+<div class="col-md-6">
+    <h2>Edit {{district.district_name}}'s Profile</h2>
+
+    <form class="form" id="district-data">
+        <div class="form-group">
+            <label for="district-name">District Name:</label>
+            <input class="form-input" type="text" id="district-name" value="{{district.district_name}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="math">District Math Requirement: </label>
+            <input class="form-input" type="text" id="math" value="{{district.math_credit_to_graduate}}" />
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" id="edit-btn">Edit District</button>
+        </div>
+
+    </form>
+    <a href="/district/{{district.id}}"><button class="btn btn-secondary">Back to
+            {{district.district_name}}'s Profile</button></a>
+</div>
+
+<a href="/district" class=" d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to
+        Districts</button></a>
+
+<script src="/js/edit-district.js"></script>

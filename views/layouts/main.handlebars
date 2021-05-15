@@ -13,19 +13,22 @@
 
 <body>
     <div class="container-fluid">
-    <h4 style="color: teal";>Administrator | GradRight</h4>
-    <ul class="nav justify-content-end tex-warning">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  href="/">Home</a>
-        </li>
-        <li class="nav-item">
-            {{#if logged_in}}
-                <a class="nav-link" href="/logout" id="logout">Log Out</a>
-            {{else}}
-                <a class="nav-link" href="/login">Login</a>
-            {{/if}}
-        </li>
-    </ul>
+        <ul class="nav justify-content-end tex-warning">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  href="/"><strong>Home</strong></a>
+            </li>
+            <li class="nav-item">
+                {{#if logged_in}}
+                    <a class="nav-link" href="/logout" id="logout"><strong>Log Out</strong></a>
+                {{else}}
+                    <a class="nav-link" href="/login"><strong>Login</strong></a>
+                {{/if}}
+            </li>
+            <li class="nav-item"></li>
+                <p style="margin-top: 8px; margin-left: 5px;"> <strong>Admin | GradRight</strong></p>
+            </li>
+            </li>
+        </ul>
     
     </div>
 

@@ -46,15 +46,15 @@
 
 /* nav bar headings*/
 ul.nav li a, ul.nav li a {
-  color: teal;
+  color: black;
 }
 
 ul.nav li a:hover, ul.nav li a:active {
-    color: black;
+    color: teal;
 }
 
 .nav {
-  color: teal;
+  color: black;
   text-align: right;
 }
 

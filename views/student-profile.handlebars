@@ -5,20 +5,44 @@
         <div class="d-flex flex-column">
             <img src="../assets/profile.png" alt="unknown profile head" style="height:250px; border:solid" /><br>
             <button class="btn btn-danger" style="margin-left: 20%; margin-right:20%" id="delete-stu">Delete Student</button>
-
         </div>
 
         <ul id="stu-data">
-            {{> student-data student}}
+            <li><span style="font-weight:bold">Student ID: </span>{{student.student_id}}</li>
+            <li><span style="font-weight:bold">School Name: </span>{{student.school_name}}</li>
+            <li><span style="font-weight:bold">School District: </span>{{student.district.district_name}}</li>
+            <li><span style="font-weight:bold">Current Year: </span>{{student.current_year}}th Grade</li>
+            <li><span style="font-weight:bold">Current Math Credit(s): </span>{{student.current_math_credits}}</li>
+            <li><span style="font-weight:bold">Required Math Credit(s):
+                </span>{{student.district.math_credit_to_graduate}}</li>
+            <li><span style="font-weight:bold">Ready to Graduate?: </span>
+                {{#if student.has_math_credits}}
+                <span style="color: green">Yes!</span>
+                {{else}}
+                <span style="color: red">No.</span>
+                {{/if}}
+
+{{!-- could try this instead; IF WORKS, DELETE BOOLEAN FROM STUDENT--}}
+{{!-- DOES NOT WORK WHEN THE FIRST NUMBER IS LESS THAN THE REQUIRED CREDITS --}}
+{{!-- HOW TO TURN INTO IF STATEMENT? --}}
+                {{!-- {{#ge student.current_math_credits student.district.math_credit_to_graduate}}
+                <span style="color: green">Yes!</span>
+                {{else}}
+                <span style="color: red">No.</span>
+                {{/ge}} --}}
+
+
+            </li>
             <br>
-            {{!-- <a href="/edit"> --}}
-            <button type="submit" class="btn btn-info" id="edit-stu">Edit Student</button>
-            {{!-- </a> --}}
+            <a href="/edit-student/{{student.id}}">
+                <button class="btn btn-info">Edit Student</button>
+            </a>
+
         </ul>
     </div>
 </div>
 
-<a href="/student" class=" d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to Students</button></a>
+<a href="/student" class="d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to
+        Students</button></a>
 
 <script src="/js/delete-student.js"></script>
-<script src="/js/edit-student.js"></script>
