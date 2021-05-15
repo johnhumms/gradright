@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { District, Student } = require("../../models");
 const withAuth = require("../../utils/auth");
+const nodemailer = require("nodemailer");
 
 // get students by district 
 // DOES NOT WORK
@@ -36,6 +37,32 @@ router.post('/', withAuth, async (req, res) => {
     } catch (err) {
       res.status(400).json(err);
     }
+
+  async function main() {
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+          user: 'gradrightadmn@gmail.com',
+          pass: 'gradright1!',
+      },
+      });
+    
+      // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
+      to: "gradrightadmn@gmail.com", // list of receivers
+      subject: "GradRight - NEW STUDENT CREATED", // Subject line
+      text: "NEW STUDENT CREATED", // plain text body
+      html: "<b>A NEW Student was CREATED and ADDED the database</b>", // html body
+      });
+    
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    }
+    
+    main().catch(console.error);
   });
 
 // update student
@@ -53,6 +80,33 @@ router.put('/:id', withAuth, (req, res) => {
         res.json(studentData)
       })
       .catch ((err) => res.status(400).json(err))
+
+  // nodemailer sends email to admin when student is updated
+    async function main() {
+      let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: 'gradrightadmn@gmail.com',
+            pass: 'gradright1!',
+        },
+        });
+      
+        // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
+        to: "gradrightadmn@gmail.com", // list of receivers
+        subject: "GradRight - STUDENT UPDATED", // Subject line
+        text: "STUDENT UPDATE", // plain text body
+        html: "<b>A Student was UPDATED from the database</b>", // html body
+        });
+      
+        console.log("Message sent: %s", info.messageId);
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      }
+      
+      main().catch(console.error);
   });
 
 // delete student
@@ -73,7 +127,8 @@ try {
 } catch (err) {
     res.status(500).json(err);
 }
-const nodemailer = require("nodemailer");
+
+// nodemailer to send email to admin when student is deleted 
 async function main() {
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -88,7 +143,7 @@ let transporter = nodemailer.createTransport({
   // send mail with defined transport object
 let info = await transporter.sendMail({
   from: '"GradRight" <gradrightadmn@gmail.com>', // sender address
-  to: "gradrightadmn@gmail.com, kwjun90@gmail.com", // list of receivers
+  to: "gradrightadmn@gmail.com", // list of receivers
   subject: "GradRight - STUDENT DELETED", // Subject line
   text: "STUDENT DELETE", // plain text body
   html: "<b>A Student was Deleted from the database</b>", // html body
