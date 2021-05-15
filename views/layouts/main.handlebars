@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
     
-    <title>GradRight!</title>
+    <title>GradRight</title>
 </head>
 
 <body>
@@ -28,19 +28,11 @@
             </li>
         </ul>
     </nav>
-    {{!-- <div class="jumbotron jumbotron-fluid" style="padding:50px"> --}}
-        <div class="container">
-        <h1 class="display-4">GradRight</h1>
-        <p class="lead">
-
-            {{{body}}}
+    <h1>GradRight</h1>
+    {{{body}}}
 
             {{#if loggedIn}}
-            <script src="/js/logout.js"></script>
+                <script src="/js/logout.js"></script>
             {{/if}}
-        </p>
-    {{!-- </div> --}}
-</div>
-  
 </body>
 </html>
