@@ -1,24 +1,15 @@
-<h2>{{district.district_name}}'s Profile</h2>
+<h2>{{district.district_name}}</h2>
 
-{{!-- IF WE HAD A PIC, HIS PIC WOULD GO HERE --}}
 {{!-- district LOGO COULD GO HERE; ADD AS ANOTHER PART OF THE MODEL, WHICH CAN BE NULL --}}
 <ul>
-
     <li>District Name: {{district.district_name}}</li>
     <li>District Math Requirement: {{district.math_credit_to_graduate}}</li>
-  
 </ul>
 
 <a href="/edit-district/{{district.id}}">
-                <button class="btn btn-info">Edit District</button>
-            </a>
-
+    <button class="btn btn-info">Edit District</button>
+</a>
 
 <button class="btn btn-danger" style="margin-left: 20%; margin-right:20%" id="delete-district">Delete District</button>
-
-
-
-<a href="/district" class="d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to
-        Districts</button></a>
 
 <script src="/js/delete-district.js"></script>

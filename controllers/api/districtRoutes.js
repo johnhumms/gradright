@@ -15,25 +15,25 @@ router.get('/', withAuth, (req, res) => {
 });
 
 // get an individual district /api/districy/:id
-router.get('/:id', withAuth, (req, res) => {
-  District.findByPk(req.params.id, {})
-  .then((districtData) => {
-    const district = districtData.get({ plain: true});
-      if (!req.params.id) {
-          res.status(404).json({ message: 'No district found with that id!' });
-          return;
-        }
+// router.get('/:id', withAuth, (req, res) => {
+//   District.findByPk(req.params.id, {})
+//   .then((districtData) => {
+//     const district = districtData.get({ plain: true});
+//       if (!req.params.id) {
+//           res.status(404).json({ message: 'No district found with that id!' });
+//           return;
+//         }
 
-      res.render('district-requirements', {
-        district,
-        logged_in: req.session.logged_in
-      })
-  })
-  .catch ((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  })
-});
+//       res.render('district-requirements', {
+//         district,
+//         logged_in: req.session.logged_in
+//       })
+//   })
+//   .catch ((err) => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   })
+// });
 
 
 // add new district

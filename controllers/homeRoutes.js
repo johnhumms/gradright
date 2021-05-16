@@ -55,8 +55,46 @@ router.get('/district', (req, res) => {
 
       res.render('district', {
         districts,
+        show_district: false,
         logged_in: req.session.logged_in
       })
+    })
+    .catch((err) => { res.status(500).json(err) })
+});
+
+// to display in drop down to show all districts on district dash
+// router.get('/district/:id', (req, res) => {
+//   District.findAll({})
+//     .then((districtData) => {
+//       const districts = districtData.map((district) => district.get({ plain: true }));
+
+//       res.render('/partials/district-requirements2', {
+//         districts,
+//         show_district: true,
+//         logged_in: req.session.logged_in
+//       })
+//     })
+//     .catch((err) => { res.status(500).json(err) })
+// });
+
+// gets individual district
+router.get('/district/:id', withAuth, (req, res) => {
+  District.findByPk(req.params.id)
+    .then((districtData) => {
+      const district = districtData.get({ plain: true });
+
+      District.findAll({})
+    .then((districtData) => {
+      const districts = districtData.map((district) => district.get({ plain: true }));
+
+          res.render('district', {
+            district,
+            districts,
+            show_district: true,
+            logged_in: req.session.logged_in
+          })
+        })
+
     })
     .catch((err) => { res.status(500).json(err) })
 });

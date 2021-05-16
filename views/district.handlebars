@@ -1,18 +1,26 @@
-    {{!-- district drop down --}}
-    <div class="dropdown">
-          {{!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Districts</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
+<h1 class="display-4">Districts</h1>
+{{!-- district drop down --}}
+<div class="dropdown">
+        <div class="form-group district-form">
+            <label for="district">District:</label>
+            <select id="district">
+                <option>Districts</option>
                 {{#each districts}}
-                    <a class="dropdown-item" href="/api/district/{{id}}">{{district_name}}</a>
+                <option value="{{id}}">{{district_name}}</option>
                 {{/each}}
-            {{!-- </div> --}}
-    </div>
+            </select>
+        </div>
+</div>
+
+<a href="/add-district"><button class="btn btn-info" style="margin-top:15px">Add District</button></a>
 
 
-    <div id="displayData" class="col-lg-8">
-        {{!-- IF TIME, SHOW DATA HERE INSTEAD --}}
-    </div>
+{{#if show_district}}
+<div id="displayData" class="col-lg-8" style="margin:20px; border:solid; border-radius:10px; background-color:white;">
+    {{> district-requirements}}
+</div>
+{{/if}}
 
-    <a href="/add-district"><button class="btn btn-info" style="margin-top:15px";>Add District</button></a>
 
-<script src="../public/js/dropdown.js"></script>
+{{!-- <script src="../public/js/dropdown.js"></script> --}}
+<script src="/js/district-dash.js"></script>

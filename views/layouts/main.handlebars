@@ -5,37 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     
     <title>GradRight</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white justify-content-end">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
+        <ul class="nav justify-content-end align-items-end">
+            <li class="nav-item d-flex flex-row ">
+                <a class="nav-link active" style="color:white" href="/">Home</a>
+            </li>
+            <li>
                 {{#if logged_in}}
-                    <a class="nav-link" href="/logout" id="logout">Log Out</a>
+                    <a class="nav-link" href="/logout" style="color:white" id="logout">Log Out</a>
                 {{else}}
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link"  style="color:white" href="/login">Login</a>
                 {{/if}}
             </li>
             <li class="nav-item">
-                <a class="nav-link color: teal">Admin | GradRight</a>
+                <a class="nav-link" style="color: rgb(131, 221, 221); font-size:xx-large">Admin | GradRight</a>
             </li>
         </ul>
     </nav>
         <!--jumbotron-->
-        <div class="jumbotron">
-            <h1 class="display-4">GradRight</h1>
+        <div class="jumbotron" style="margin:0">
             
             {{{body}}}
 
             {{#if logged_in}}
-                <script src="../../public/js/logout.js"></script>
+                <script src="/js/logout.js"></script>
             {{/if}}
         </div>
     
+    <footer style="background-color: rgb(56,60,68); padding:20px; text-align:center; font-size:smaller" class="d-flex justify-content-center flex-column">
+        <p style="color:rgb(131, 221, 221); margin-bottom:5px;">Created By:</p>
+            <div style="color:white">
+                <a href="https://github.com/JXIong15" style="color:white" target="_blank">Jou Xiong</a> <span style="font-size:large">|</span>
+                <a href="https://github.com/johnhumms" style="color:white" target="_blank">John Hummel</a> <span style="font-size:large">|</span>
+                <a href="https://github.com/kjun290" style="color:white" target="_blank">Kevin Jun</a>
+            </div>
+    </footer>
+
 </body>
 </html>
