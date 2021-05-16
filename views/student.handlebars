@@ -1,6 +1,6 @@
 {{!-- student options --}}
 <h1 class="display-4">Students</h1>
-<ul>
+<ul style="margin-top: 20px">
     {{#each students}}
     <li>
         <a href="/student/{{id}}">{{student_name}} </a>
@@ -10,4 +10,4 @@
 </ul>
 
 
-<a href="/add-student"><button class="btn btn-info" id="add-stu">Add Student</button></a>
+<a href="/add-student"><button type="button" class="btn btn-success btn-lg" id="add-stu">Add Student</button></a>
