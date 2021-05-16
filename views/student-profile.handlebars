@@ -1,10 +1,9 @@
 <div>
     <h2 style="text-align: center;">{{student.student_name}}'s Profile</h2>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" style="margin-top: 20px">
         <div class="d-flex flex-column">
             <img src="../assets/{{student.picture}}" alt="{{student.student_name}}'s profile head" style="height:250px; width:230px; border:solid" /><br>
-            <button class="btn btn-danger" style="margin-left: 20%; margin-right:20%" id="delete-stu">Delete Student</button>
         </div>
 
         <ul id="stu-data">
@@ -19,15 +18,20 @@
                 {{#ge student.current_math_credits student.district.math_credit_to_graduate}}{{/ge}}
             </li>
             <br>
-            <a href="/edit-student/{{student.id}}">
-                <button class="btn btn-info">Edit Student</button>
-            </a>
 
         </ul>
     </div>
 </div>
 
-<a href="/student" class="d-flex justify-content-end" style="margin: 20px"><button class="btn btn-secondary">Back to
-        Students</button></a>
+<div style="text-align: center">
+<a href="/edit-student/{{student.id}}">
+                <button type="button" class="btn btn-success btn-lg" style="margin-top: 5px; margin-right: 5px">Edit Student</button>
+            </a>
+
+<button class="btn btn-danger btn-lg" style ="margin-top: 5px; margin-right: 5px" id="delete-stu">Delete Student</button>
+
+<a href="/student"><button class="btn btn-secondary btn-lg" style ="margin-top: 5px;">Back to Students</button></a>
+
+</div>
 
 <script src="/js/delete-student.js"></script>
