@@ -1,6 +1,6 @@
 async function addStudent(event) {
     event.preventDefault();
-
+console.log("add")
     const student_name = document.querySelector('#stu-name').value;
     const student_id = document.querySelector('#stu-id').value;
     const school_name = document.querySelector('#school').value;    
@@ -12,7 +12,8 @@ async function addStudent(event) {
     const current_pe_credits = document.querySelector('#pe').value;
     const current_health_credits = document.querySelector('#health').value;
     const current_elective_credits = document.querySelector('#elective').value;
-    const picture = document.querySelector('#profile').value;
+    // const picture = document.querySelector('#profile').value;
+    // console.log(picture)
     // const picture = 'profile.png';
     const district_id = document.querySelector('#district').value;
 
@@ -46,4 +47,4 @@ async function addStudent(event) {
     }
   }
   
-  document.querySelector('.student-form').addEventListener('submit', addStudent);
+  document.querySelector('#add-stu-btn').addEventListener('click', addStudent);

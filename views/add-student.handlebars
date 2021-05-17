@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-sm-6 col-md-12">
   <h2>Add A Student</h2>
 
   <form class="form student-form">
@@ -16,7 +16,7 @@
       <label for="district">District:<span style="color:red">*</span></label>
       <select id="district">
         {{#each districts}}
-          <option value="{{id}}">{{district_name}}</option>
+        <option value="{{id}}">{{district_name}}</option>
         {{/each}}
       </select>
     </div>
@@ -41,7 +41,7 @@
       <input class="form-input" type="text" id="math" />
     </div>
 
-<div class="form-group">
+    <div class="form-group">
       <label for="math">Current English Credit(s):<span style="color:red">*</span></label>
       <input class="form-input" type="text" id="eng" />
     </div>
@@ -71,25 +71,48 @@
       <input class="form-input" type="text" id="elective" />
     </div>
 
-
-       {{!-- IMG DOES NOT SAVE TO BE UPLOADED --}}
     <p>Click on the "Choose File" button to upload an image for the student:</p>
-    <div action="/action_page.php" id="file-upload">
-    <label for="file-upload">
-      <input type="file" id="profile" name="img" src="">
-      </label>
-    </div>
+    <form action="/action_page.php">
+      <input type="file" id="profile" name="filename">
+    </form>
 
 
+{{!-- WORKS BUT LOTS OF ERRORS --}}
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var picture;
+      
+      var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dxhp3w7sg',
+        uploadPreset: 'h2bkr71w'
+      }, (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log('Done! Here is the image info: ', result.info);
 
+          picture = result.info.secure_url
+          console.log(picture);
+        }
+        console.log('ERRRRRR', error)
+      })
+      document.getElementById("profile").addEventListener("click", function (event) {
+        event.preventDefault()
+        console.log('UPload image clicked!!!')
+        myWidget.open();
+      }, false);
+    </script><br>
+{{!-- end of script --}}
 
     <div class="form-group">
-      <button class="btn btn-success" style="margin-top: 20px" type="submit">Add Student</button>
+      <button class="btn btn-success" style="margin-top: 20px" id="add-stu-btn">Add Student</button>
     </div>
 
   </form>
-  <a href="/student"><button class="btn btn-secondary">Back to Students</button></a>
+  <div class="d-flex justify-content-end">
+    <a href="/student"><button class="btn btn-secondary">Back to Students</button></a>
+  </div>
 </div>
 
-<script src="/js/img-upload.js"></script>
 <script src="/js/add-student.js"></script>
+{{!-- 
+<script src="/js/img-upload.js"></script>
+<script src="https://upload-widget.cloudinary.com/global/all.js"></script> --}}

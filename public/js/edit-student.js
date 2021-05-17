@@ -32,7 +32,7 @@ async function editStudent(event) {
             current_pe_credits,
             current_health_credits,
             current_elective_credits,
-            // picture,
+            picture,
             district_id,
         }),
         headers: {

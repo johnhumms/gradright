@@ -101,11 +101,15 @@ npm start
 
 
 ## Future Ideas
-
+* Get image uploads to work flawlessly
 
 
 ## Known Bugs
 * When editing a student, their current grade level is not automatically set. `9th` grade is set instead because it is the first option.
+* Image Upload works, but there are lots of errors
+    * repeatedly console logs errors before function is initiated
+    * does not indicate that an image was uploaded, even though it is
+    * only works on the same handlebars file rather than on the separate JS file
 
 
 ## Sources

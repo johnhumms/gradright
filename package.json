@@ -9,6 +9,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "bytes": "^3.1.0",
+    "cloudinary": "^1.25.1",
     "connect-session-sequelize": "^7.1.1",
     "content-disposition": "^0.5.3",
     "content-type": "^1.0.4",
