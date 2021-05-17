@@ -2,8 +2,8 @@
 <h1 class="display-4">Students</h1>
 <ul style="margin-top: 20px">
     {{#each students}}
-    <li>
-        <a href="/student/{{id}}">{{student_name}} </a>
+    <li style="font-size:larger">
+        <a href="/student/{{id}}" style="font-weight:bold; color:rgb(71, 180, 180)">{{student_name}} </a>
         | {{school_name}} | {{current_year}}th Grade | {{district.district_name}}
     </li>
     {{/each}}
