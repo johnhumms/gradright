@@ -115,6 +115,7 @@ npm start
 * In the Student Model, add this unknown silhouette as a default: https://res.cloudinary.com/dxhp3w7sg/image/upload/v1621284920/amssiecgiekpdnitjgww.png
 * Add picture of the district logo in the district dashboard
 * More images in general
+* Allow Users to add their email to receive notifications from NodeMailers.
 
 
 ## Known Bugs
