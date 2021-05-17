@@ -4,7 +4,7 @@
         "math_credit_to_graduate": 3,
         "english_credit_to_graduate": 4,
         "science_credit_to_graduate": 2,
-        "socialStudies_credit_to_graduate": 3,
+        "social_studies_credit_to_graduate": 3,
         "pe_credit_to_graduate": 3.5,
         "health_credit_to_graduate": 0.5,
         "elective_credit_to_graduate": 4
@@ -15,7 +15,7 @@
         "math_credit_to_graduate": 3,
         "english_credit_to_graduate": 4,
         "science_credit_to_graduate": 3,
-        "socialStudies_credit_to_graduate": 3,
+        "social_studies_credit_to_graduate": 3,
         "pe_credit_to_graduate": 1.5,
         "health_credit_to_graduate": 0.5,
         "elective_credit_to_graduate": 6
@@ -27,7 +27,7 @@
         "math_credit_to_graduate": 3,
         "english_credit_to_graduate": 4,
         "science_credit_to_graduate": 3,
-        "socialStudies_credit_to_graduate": 3,
+        "social_studies_credit_to_graduate": 3,
         "pe_credit_to_graduate": 2,
         "health_credit_to_graduate": 0.5,
         "elective_credit_to_graduate": 6

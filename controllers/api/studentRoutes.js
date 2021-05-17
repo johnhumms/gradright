@@ -35,7 +35,7 @@ router.post('/', withAuth, async (req, res) => {
       main(newStudent).catch(console.error);
       res.status(200).json(newStudent);
 
-      console.log('student who was updated!!', newStudent)
+      console.log('student who was created!', newStudent)
 
       res.json(studentData)
     } catch (err) {
