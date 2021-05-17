@@ -112,6 +112,9 @@ npm start
             * Admins can invite Teachers and other admins, teachers can invite students
     * There is no role option on the User Model, so this will need to be added
 * Filter/sort option
+* In the Student Model, add this unknown silhouette as a default: https://res.cloudinary.com/dxhp3w7sg/image/upload/v1621284920/amssiecgiekpdnitjgww.png
+* Add picture of the district logo in the district dashboard
+* More images in general
 
 
 ## Known Bugs
