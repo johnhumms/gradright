@@ -30,6 +30,30 @@ Student.init(
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
+    current_english_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
+    current_science_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
+    current_socialStudies_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
+    current_pe_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
+    current_health_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
+    current_elective_credits: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+    },
     picture: {
       type: DataTypes.STRING,
       allowNull: true,
