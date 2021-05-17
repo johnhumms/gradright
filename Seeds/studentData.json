@@ -5,6 +5,12 @@
         "school_name": "Elgin High School",
         "current_year": 9,
         "current_math_credits": 1,
+        "current_english_credits": 1,
+        "current_science_credits": 0.5,
+        "current_socialStudies_credit": 1,
+        "current_pe_credit": 1,
+        "current_health_credit": 0,
+        "current_elective_credit": 0.5,
         "picture": "spongebob.jpeg",
         "district_id": 1
     },
@@ -14,6 +20,12 @@
         "school_name": "Milwaukee High School of the Arts",
         "current_year": 11,
         "current_math_credits": 3,
+        "current_english_credits": 3,
+        "current_science_credits": 2,
+        "current_socialStudies_credit": 2,
+        "current_pe_credit": 1.5,
+        "current_health_credit": 0.5,
+        "current_elective_credit": 4,
         "picture": "sandy.jpeg",
         "district_id": 2
     }
@@ -23,6 +35,12 @@
         "school_name": "Larkin High School",
         "current_year": 12,
         "current_math_credits": 3,
+        "current_english_credits": 4,
+        "current_science_credits": 2,
+        "current_socialStudies_credit": 3,
+        "current_pe_credit": 3.5,
+        "current_health_credit": 0.5,
+        "current_elective_credit": 4,
         "picture": "patrick.jpeg",
         "district_id": 1
     }
@@ -32,6 +50,12 @@
         "school_name": "Dundee Crowne High School",
         "current_year": 12,
         "current_math_credits": 5,
+        "current_english_credits": 4,
+        "current_science_credits": 3,
+        "current_socialStudies_credit": 2.5,
+        "current_pe_credit": 4,
+        "current_health_credit": 0.5,
+        "current_elective_credit": 5,
         "picture": "squidward.jpeg",
         "district_id": 3
     }
