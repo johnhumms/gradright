@@ -12,8 +12,8 @@ async function addStudent(event) {
     const current_pe_credits = document.querySelector('#pe').value;
     const current_health_credits = document.querySelector('#health').value;
     const current_elective_credits = document.querySelector('#elective').value;
-    // const picture = document.querySelector('#profile').value;
-    const picture = 'profile.png';
+    const picture = document.querySelector('#profile').value;
+    // const picture = 'profile.png';
     const district_id = document.querySelector('#district').value;
 
 

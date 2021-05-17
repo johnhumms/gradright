@@ -52,6 +52,7 @@
     "qs": "^6.7.0",
     "range-parser": "^1.2.1",
     "raw-body": "^2.4.0",
+    "request": "^2.88.2",
     "safe-buffer": "^5.1.2",
     "safer-buffer": "^2.1.2",
     "send": "^0.17.1",
