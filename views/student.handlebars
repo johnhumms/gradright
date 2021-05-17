@@ -1,13 +1,13 @@
 {{!-- student options --}}
 <h1 class="display-4">Students</h1>
-<ul>
+<ul style="margin-top: 20px">
     {{#each students}}
-    <li>
-        <a href="/student/{{id}}">{{student_name}} </a>
+    <li style="font-size:larger">
+        <a href="/student/{{id}}" style="font-weight:bold; color:rgb(71, 180, 180)">{{student_name}} </a>
         | {{school_name}} | {{current_year}}th Grade | {{district.district_name}}
     </li>
     {{/each}}
 </ul>
 
 
-<a href="/add-student"><button class="btn btn-info" id="add-stu">Add Student</button></a>
+<a href="/add-student"><button type="button" class="btn btn-success btn-lg" id="add-stu">Add Student</button></a>

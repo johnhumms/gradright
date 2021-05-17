@@ -1,9 +1,11 @@
+<div class="d-flex justify-content-center">
+<section>
 <h1 class="display-4">Districts</h1>
 {{!-- district drop down --}}
-<div class="dropdown">
+<div class="dropdown" style="margin-top: 30px">
         <div class="form-group district-form">
-            <label for="district">District:</label>
-            <select id="district">
+            <label for="district" style="font-size:x-large">District:</label>
+            <select id="district" style="font-size:x-large">
                 <option>Districts</option>
                 {{#each districts}}
                 <option value="{{id}}">{{district_name}}</option>
@@ -12,15 +14,15 @@
         </div>
 </div>
 
-<a href="/add-district"><button class="btn btn-info" style="margin-top:15px">Add District</button></a>
-
+<a href="/add-district"><button type="button" class="btn btn-success btn-lg" style="margin-top:15px">Add District</button></a>
+</section>
 
 {{#if show_district}}
-<div id="displayData" class="col-lg-8" style="margin:20px; border:solid; border-radius:10px; background-color:white;">
+<div id="displayData" style="margin-left:50px; border:solid; border-radius:10px; background-color:white; padding:20px;">
     {{> district-requirements}}
 </div>
 {{/if}}
-
+</div>
 
 {{!-- <script src="../public/js/dropdown.js"></script> --}}
 <script src="/js/district-dash.js"></script>
