@@ -3,8 +3,8 @@ module.exports = {
       return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
     },
 
-    // greater than or equal to
-    ge: (a,b,c,d,e,f,g,h,i,j,k,l,m,n) => {
+    // determines is the student is ready to graduate
+    grad: (a,b,c,d,e,f,g,h,i,j,k,l,m,n) => {
       a = parseInt(a);
       b = parseInt(b);
       c = parseInt(c);
@@ -25,6 +25,19 @@ module.exports = {
       }
       else {
         return ('<span style="color: red">No.</span>');
+      }
+    },
+
+// greater than or equal to
+    ge: (a,b) => {
+      a = parseInt(a);
+      b = parseInt(b);
+      
+      if (a < b) {
+        return ('<span style="color: red">');
+      }
+      else {
+        return('<span>');
       }
     },
   };

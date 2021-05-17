@@ -1,20 +1,18 @@
 <div>
     <h2 style="text-align: center;">{{student.student_name}}'s Profile</h2>
 <h3 style="text-align:center; font-size:large"><span style="font-weight:bold">Ready to Graduate?: </span>
-                {{#ge student.current_math_credits student.district.math_credit_to_graduate 
+                {{#grad student.current_math_credits student.district.math_credit_to_graduate 
                 student.current_english_credits student.district.english_credit_to_graduate 
                 student.current_science_credits student.district.science_credit_to_graduate 
                 student.current_social_studies_credits student.district.social_studies_credit_to_graduate 
                 student.current_pe_credits student.district.pe_credit_to_graduate 
                 student.current_health_credits student.district.health_credit_to_graduate 
-                student.current_health_credits student.current_elective_credits 
-                student.district.elective_credit_to_graduate}}{{/ge}}
-            {{!-- CHANGE THIS --}}
+                student.current_elective_credits student.district.elective_credit_to_graduate}}{{/grad}}
             </h3>
 
     <div class="d-flex justify-content-center" style="margin-top: 20px">
         <div class="d-flex flex-column align-items-center">
-            <img src="../assets/{{student.picture}}" alt="{{student.student_name}}'s profile head"
+            <img src="{{student.picture}}" alt="{{student.student_name}}'s profile head"
                 style="height:250px; width:230px; border:solid;" /><br>
         <ul style="list-style-type: none; padding-left:0">
             <li><span style="font-weight:bold">Student ID: </span>{{student.student_id}}</li>
@@ -25,25 +23,38 @@
         </div>
 
         <ul id="stu-data">
-            <li><span style="font-weight:bold">Current Math Credit(s): </span>{{student.current_math_credits}}</li>
+            <li><span style="font-weight:bold">Current Math Credit(s): </span>
+                {{#ge student.current_math_credits student.district.math_credit_to_graduate}}{{/ge}} {{student.current_math_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Math Credit(s):
                 </span>{{student.district.math_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current English Credit(s): </span>{{student.current_english_credits}}</li>
+
+            <li><span style="font-weight:bold">Current English Credit(s): </span>
+                {{#ge student.current_english_credits student.district.english_credit_to_graduate}}{{/ge}} {{student.current_english_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required English Credit(s):
                 </span>{{student.district.english_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current Science Credit(s): </span>{{student.current_science_credits}}</li>
+
+            <li><span style="font-weight:bold">Current Science Credit(s): </span>
+            {{#ge student.current_science_credits student.district.science_credit_to_graduate}}{{/ge}} {{student.current_science_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Science Credit(s):
                 </span>{{student.district.science_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current Social Studies Credit(s): </span>{{student.current_social_studies_credits}}</li>
+                
+            <li><span style="font-weight:bold">Current Social Studies Credit(s): </span>
+            {{#ge student.current_social_studies_credits student.district.social_studies_credit_to_graduate}}{{/ge}} {{student.current_social_studies_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Social Studies Credit(s):
                 </span>{{student.district.social_studies_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current Physical Education Credit(s): </span>{{student.current_pe_credits}}</li>
+
+            <li><span style="font-weight:bold">Current Physical Education Credit(s): </span>
+            {{#ge student.current_pe_credits student.district.pe_credit_to_graduate}}{{/ge}} {{student.current_pe_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Physical Education Credit(s):
                 </span>{{student.district.pe_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current Health Credit(s): </span>{{student.current_health_credits}}</li>
+
+            <li><span style="font-weight:bold">Current Health Credit(s): </span>
+            {{#ge student.current_health_credits student.district.health_credit_to_graduate}}{{/ge}} {{student.current_health_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Health Credit(s):
                 </span>{{student.district.health_credit_to_graduate}}</li>
-            <li><span style="font-weight:bold">Current Elective Credit(s): </span>{{student.current_elective_credits}}</li>
+
+            <li><span style="font-weight:bold">Current Elective Credit(s): </span>
+            {{#ge student.current_elective_credits student.district.elective_credit_to_graduate}}{{/ge}} {{student.current_elective_credits}}</span></li>
             <li style="list-style-type: none;"><span style="font-weight:bold">Required Elective Credit(s):
                 </span>{{student.district.elective_credit_to_graduate}}</li>
         </ul>

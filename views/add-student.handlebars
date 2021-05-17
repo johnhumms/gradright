@@ -74,16 +74,13 @@
 
        {{!-- IMG DOES NOT SAVE TO BE UPLOADED --}}
     <p>Click on the "Choose File" button to upload an image for the student:</p>
-    <div action="/action_page.php">
-      <input type="file" id="profile" name="img" src="#">
+    <div action="/action_page.php" id="file-upload">
+    <label for="file-upload">
+      <input type="file" id="profile" name="img" src="">
+      </label>
     </div>
 
-<script>
-  document.querySelector("#profile").addEventListener("change", function() {
-    console.log(this.files);
-  })
 
-</script>
 
 
     <div class="form-group">
@@ -94,4 +91,5 @@
   <a href="/student"><button class="btn btn-secondary">Back to Students</button></a>
 </div>
 
+<script src="/js/img-upload.js"></script>
 <script src="/js/add-student.js"></script>
