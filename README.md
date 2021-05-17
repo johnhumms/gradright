@@ -72,15 +72,25 @@ npm start
 
 ## Installations
 * Download NPM and packages:
-  * Inquirer (npm install inquirer)
   * Node (npm install node)
   * Dotenv (npm install dotenv)
   * Express (npm install express)
-  * MySql (npm install mysql)
+  * MySql2 (npm install mysql2)
+  * NodeMailer (npm install nodemailer)
+  * Cloudinary (npm install cloudinary)
 <p style="font-size:30px; color:red; background-color:yellow">Any other packages/installations</p>
 
 
 ## Technologies Used
+* Bootstrap
+* Heroku
+    * JawsDB
+* MySQL
+* Express
+* Handlebars
+* Nodemailer
+* Cloudinary (Help from <a href="https://github.com/javiistacks">javiistacks</a>)
+
 
 
 ## Demos
@@ -102,6 +112,16 @@ npm start
 
 ## Future Ideas
 * Get image uploads to work flawlessly
+* Adding a search bar to search for a specific district/ student
+* Different User views:
+    * Students can update their profile demographics but not their grades
+    * Teachers can update student grades and request to delete students
+    * Current Admin view can do all
+        * Admins can also designate roles to users, which will keep users with their specific permissions
+            * Admins can invite Teachers and other admins, teachers can invite students
+    * There is no role option on the User Model, so this will need to be added
+* Filter/sort option
+
 
 
 ## Known Bugs
