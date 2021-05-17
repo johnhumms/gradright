@@ -41,6 +41,36 @@
             <input class="form-input" type="text" id="math" value="{{student.current_math_credits}}" />
         </div>
 
+<div class="form-group">
+      <label for="math">Current English Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="eng" value="{{student.current_english_credits}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Science Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="sci" value="{{student.current_science_credits}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Social Studies Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="ss" value="{{student.current_social_studies_credits}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Physical Education Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="pe" value="{{student.current_pe_credits}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Health Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="health" value="{{student.current_health_credits}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="math">Current Elective Credit(s):<span style="color:red">*</span></label>
+      <input class="form-input" type="text" id="elective" value="{{student.current_elective_credits}}" />
+    </div>
+
         {{!-- IMG DOES NOT SAVE TO BE UPLOADED --}}
         <p>Click on the "Choose File" button to upload an image for the student:</p>
         <div action="/action_page.php">

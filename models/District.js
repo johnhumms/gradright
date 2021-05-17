@@ -41,7 +41,7 @@ District.init(
       },
     },
 
-    socialStudies_credit_to_graduate: {
+    social_studies_credit_to_graduate: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
       validate: {

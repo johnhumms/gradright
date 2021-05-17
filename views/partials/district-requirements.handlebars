@@ -1,9 +1,14 @@
 <h2>{{district.district_name}}</h2>
-
+<h4 style="margin-left:15px">District Requirements</h4>
 {{!-- district LOGO COULD GO HERE; ADD AS ANOTHER PART OF THE MODEL, WHICH CAN BE NULL --}}
 <ul>
-    <li>District Name: {{district.district_name}}</li>
-    <li>District Math Requirement: {{district.math_credit_to_graduate}}</li>
+    <li>Math: {{district.math_credit_to_graduate}}</li>
+    <li>English: {{district.english_credit_to_graduate}}</li>
+    <li>Science: {{district.science_credit_to_graduate}}</li>
+    <li>Social Studies: {{district.social_studies_credit_to_graduate}}</li>
+    <li>Physical Education: {{district.pe_credit_to_graduate}}</li>
+    <li>Health: {{district.health_credit_to_graduate}}</li>
+    <li>Electives: {{district.elective_credit_to_graduate}}</li>
 </ul>
 
 <div class="d-flex justify-content-around">

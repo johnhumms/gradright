@@ -38,7 +38,7 @@ Student.init(
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
-    current_socialStudies_credits: {
+    current_social_studies_credits: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
