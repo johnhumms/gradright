@@ -6,10 +6,11 @@
     <li>District Math Requirement: {{district.math_credit_to_graduate}}</li>
 </ul>
 
-<a href="/edit-district/{{district.id}}">
-    <button class="btn btn-info">Edit District</button>
-</a>
+<div class="d-flex justify-content-around">
+    <a href="/edit-district/{{district.id}}"><button class="btn btn-info">Edit District</button></a>
 
-<button class="btn btn-danger" style="margin-left: 20%; margin-right:20%" id="delete-district">Delete District</button>
+    <button class="btn btn-danger" id="delete-district">Delete
+        District</button>
+</div>
 
 <script src="/js/delete-district.js"></script>
