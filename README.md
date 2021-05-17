@@ -61,10 +61,11 @@ npm start
 * Linked Handlebars forms and functions with any necessary Public Javascript files
     * JS files call upon `homeroutes.js` in the routes folder to `GET` and display the desired data
     * JS files also can refer to the `api` routes, which allows data to be `updated`, `stored`, `created`, or `deleted` from the database. This is then reflected on the user-interface.
-<p style="font-size:30px; color:red; background-color:yellow">Using Nodemailer, when a student is updated, deleted or a new student is deleted an email is sent with the name of the student.</p>
+* <p style="font-size:30px; color:red; background-color:yellow">Using Nodemailer, when a student is updated, deleted or a new student is deleted an email is sent with the name of the student.</p>
+![GradRight_Email](https://user-images.githubusercontent.com/73242250/118423289-4c7dff80-b68a-11eb-8317-546d92fb3463.png)
 
-
-<p style="font-size:30px; color:red; background-color:yellow">![GradRight_Email](https://user-images.githubusercontent.com/73242250/118423137-f3ae6700-b689-11eb-99cd-9e06a059bb48.png)
+<p style="font-size:30px; color:red; background-color:yellow">
+ 
 </p>
 
 
@@ -90,12 +91,13 @@ npm start
 ![GradRight_DistrictDash](https://user-images.githubusercontent.com/73242250/118422072-18a1da80-b688-11eb-9e95-5b868ed30cd0.png)
 
 * Add Demo:
-![GradRight_DistrictDash](https://user-images.githubusercontent.com/73242250/118422277-83ebac80-b688-11eb-86a6-4ce62db8971c.png)
+![GradRightdDistrictDemo](https://user-images.githubusercontent.com/73242250/118423439-9ff04d80-b68a-11eb-8395-e98f1742f534.gif)
 
 * Student Dashboard:
 ![GradRight_StudentDash](https://user-images.githubusercontent.com/73242250/118422340-a1b91180-b688-11eb-895e-b78d837b648b.png)
 
-
+* Add Demo:
+![GradRightdStudentDemo](https://user-images.githubusercontent.com/73242250/118423454-a2eb3e00-b68a-11eb-8356-dfcd8e81a9fe.gif)
 
 
 ## Future Ideas
