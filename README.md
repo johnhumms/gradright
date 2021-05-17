@@ -6,8 +6,8 @@
 * [Introduction](#introduction)
 * [Functionality](#functionality)
 * [Tasks Completed](#tasks-completed)
-* [Technologies Used](#technologies-used)
 * [Installations](#installations)
+* [Technologies Used](#technologies-used)
 * [Demos](#demos)
 * [Future Ideas](#future-ideas)
 * [Known Bugs](#known-bugs)
@@ -16,8 +16,7 @@
 
 
  ## Introduction
-<p style="font-size:30px; color:red; background-color:yellow">INTRO</p>
-
+Admin users can keep track of their students' graduation requirements regardless of the amount of different requirements there are. GradRight compares students with their respective districts to indicate which graduation requirements are met. Districts and Students can be added, edited, and deleted.
 * GitHub Repository: https://github.com/johnhumms/gradright
 * Heroku Link: https://gradright.herokuapp.com/
 
@@ -44,7 +43,6 @@ npm run seed
 npm start
 ```
 
-
 ## Tasks Completed
 * Dowloaded necessary NPM packages. View [Installations](#installations) below for exact packages.
 * Created a connection between the database and server using MySql and Express.
@@ -64,11 +62,6 @@ npm start
 * <p style="font-size:30px; color:red; background-color:yellow">Using Nodemailer, when a student is updated, deleted or a new student is deleted an email is sent with the name of the student.</p>
 ![GradRight_Email](https://user-images.githubusercontent.com/73242250/118423289-4c7dff80-b68a-11eb-8317-546d92fb3463.png)
 
-<p style="font-size:30px; color:red; background-color:yellow">
- 
-</p>
-
-
 
 ## Installations
 * Download NPM and packages:
@@ -78,7 +71,6 @@ npm start
   * MySql2 (npm install mysql2)
   * NodeMailer (npm install nodemailer)
   * Cloudinary (npm install cloudinary)
-<p style="font-size:30px; color:red; background-color:yellow">Any other packages/installations</p>
 
 
 ## Technologies Used
@@ -90,7 +82,6 @@ npm start
 * Handlebars
 * Nodemailer
 * Cloudinary (Help from <a href="https://github.com/javiistacks">javiistacks</a>)
-
 
 
 ## Demos
@@ -123,7 +114,6 @@ npm start
 * Filter/sort option
 
 
-
 ## Known Bugs
 * When editing a student, their current grade level is not automatically set. `9th` grade is set instead because it is the first option.
 * Image Upload works, but there are lots of errors
@@ -137,7 +127,7 @@ npm start
 * MySql Workbench: https://www.mysql.com/products/workbench/
 * MySql Server: https://dev.mysql.com/downloads/mysql/
 * Heroku: https://devcenter.heroku.com/articles/heroku-cli
-<p style="font-size:30px; color:red; background-color:yellow">Any other sources?</p>
+* Cloudinary: https://cloudinary.com/
 
 
 ## License
