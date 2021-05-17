@@ -71,11 +71,38 @@
       <input class="form-input" type="text" id="elective" value="{{student.current_elective_credits}}" />
     </div>
 
-        {{!-- IMG DOES NOT SAVE TO BE UPLOADED --}}
+
         <p>Click on the "Choose File" button to upload an image for the student:</p>
-        <div action="/action_page.php">
-            <input type="file" id="profile" name="img" src="#">
-        </div>
+    <form action="/action_page.php">
+      <input type="file" id="profile" name="filename">
+    </form>
+
+
+{{!-- WORKS BUT LOTS OF ERRORS --}}
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var picture;
+      
+      var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dxhp3w7sg',
+        uploadPreset: 'h2bkr71w'
+      }, (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log('Done! Here is the image info: ', result.info);
+
+          picture = result.info.secure_url
+          console.log(picture);
+        }
+        console.log('ERRRRRR', error)
+      })
+      document.getElementById("profile").addEventListener("click", function (event) {
+        event.preventDefault()
+        console.log('UPload image clicked!!!')
+        myWidget.open();
+      }, false);
+    </script><br>
+{{!-- end of script --}}
+
 
         <div class="form-group">
             <button class="btn btn-primary" type="submit" id="edit-btn">Edit Student</button>
@@ -87,3 +114,6 @@
 </div>
 
 <script src="/js/edit-student.js"></script>
+{{!-- 
+<script src="/js/img-upload.js"></script>
+<script src="https://upload-widget.cloudinary.com/global/all.js"></script> --}}
